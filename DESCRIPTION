@@ -1,13 +1,48 @@
 Package: mjcbase
-Version: 0.1
-Date: 2004-10-18
+Version: 1.0.0
+Date: 2012-07-16
 Title: General helper functions for dealing with R objects/data types
-Author: Mark Cowley <mark.cowley@student.unsw.edu.au>
-Maintainer:  Mark Cowley <mark.cowley@student.unsw.edu.au>
-Depends: R (>= 2.2.0)
+Author: Mark Cowley <m.cowley@garvan.org.au>
+Maintainer: Mark Cowley <m.cowley@garvan.org.au>
+Depends:
+    R (>= 2.12.0)
 Suggests:
-Description: A library of generic helper functions for making life easier
-License: GPL version 2 or newer
-URL: http://www.littlelab.bioinformatics.unsw.edu.au
+    testthat
+Description: A library of generic helper functions for making life easier in R
+URL: http://www.garvan.unsw.edu.au/bioinformatics/
 Type: Package
 License: GPL-2
+Collate:
+    'cat.matrix.R'
+    'choose.pairs.R'
+    'clean.tempdir.R'
+    'count.na.R'
+    'dir.Rdata.R'
+    'get.char.R'
+    'is.alnum.R'
+    'is.sorted.R'
+    'is.unique.R'
+    'matlab.R'
+    'midpoints.R'
+    'pad.R'
+    'qn.R'
+    'range_merge.R'
+    'readLine.R'
+    'reorder.list.R'
+    'rm.na.R'
+    'scale2.R'
+    'sortnum.R'
+    'sourcelog.R'
+    'strcat.R'
+    'strlen.R'
+    'uncsv.R'
+    'which.2D.R'
+    'whichN.R'
+    'density_tri.R'
+    'split.into.batches.R'
+    'time_diff.R'
+    'ucounts.R'
+    'rep_list.R'
+Imports:
+    pwbc,
+    stats
