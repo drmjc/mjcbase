@@ -1,11 +1,11 @@
-## concatenate a bunch of strings
-##
-## eg:
-##     strcat("A", "A", "c")
-##     [1] "AAc"
-##
-## Mark Cowley, 11 April 2006
-##
+#' concatenate a bunch of strings
+#' 
+#' @param \dots character vectors to be concatenated
+#' @author Mark Cowley, 11 April 2006
+#' @export
+#' @examples
+#' strcat(letters)
+#' # [1] "abcdefghijklmnopqrstuvwxyz"
 strcat <- function(...) {
-    paste(unlist( list(...) ), collapse="")
+	paste0(unlist( list(...) ))
 }
