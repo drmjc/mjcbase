@@ -1,0 +1,54 @@
+\name{colclasses}
+\alias{'colclasses<-'}
+\alias{colclasses}
+\alias{colclasses<-}
+\title{Get/set the column classes of matrix-like data}
+\usage{
+  colclasses(x)
+
+  colclasses(x) <- value
+}
+\arguments{
+  \item{x}{a \code{matrix}, or \code{data.frame}}
+
+  \item{value}{a character vector of new column classes. if
+  \code{length(value) < ncol(x)}, \code{value} is recycled}
+}
+\value{
+  \code{colclasses}: a \code{character vector} of column
+  classes, with the same length as the number of columns.
+  Typical classes include \code{numeric}, \code{character},
+  \code{logical}, \code{factor}, \dots{}
+
+  \code{colclasses<-}: return \code{x} with different
+  column classes.
+}
+\description{
+  \code{colclasses} returns the classes of each column.
+  It's quite useful for checking whether \code{factor}s
+  snuck into a \code{data.frame}.  All columns in a
+  \code{matrix} have the same type, but \code{data.frame}'s
+  may have mixed column types.
+}
+\details{
+  \code{colclasses<-} sets the column classes in \code{x}.
+  Remember that \code{matrix} columns are all of the same
+  class, \code{data.frame} can have multiple classes.
+}
+\examples{
+# colnames getter example
+x <- as.data.frame(cbind(1:5, LETTERS[1:5], rep(TRUE, 5)), stringsAsFactors=FALSE)
+colclasses(x)
+y <- as.data.frame(cbind(1:5, LETTERS[1:5], rep(TRUE, 5)), stringsAsFactors=TRUE)
+colclasses(y)
+# colnames setter example
+y <- as.data.frame(cbind(1:5, LETTERS[1:5], rep(TRUE, 5)), stringsAsFactors=TRUE)
+colclasses(y)
+colclasses(y) <- c("numeric", "character", "logical")
+colclasses(y)
+}
+\author{
+  Mark Cowley, 18 Nov 2004
+}
+\keyword{attribute}
+

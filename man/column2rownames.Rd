@@ -1,0 +1,78 @@
+\name{column2rownames}
+\alias{colnames2row}
+\alias{column2rownames}
+\alias{row2colnames}
+\alias{rownames2col}
+\title{move columns/rows to col/rownames & back again}
+\usage{
+  column2rownames(x, column = 1, sep = ".")
+
+  row2colnames(x, row = 1, sep = ".")
+
+  rownames2col(x, column = 1, colname = "")
+
+  colnames2row(x, row = 1, rowname)
+}
+\arguments{
+  \item{x}{a \code{data.frame}}
+
+  \item{column}{the column index that the newly moved
+  rownames will have - (ie column=1 puts the rownames into
+  the first column). If column=NULL or column > ncol(x),
+  the rownames will be moved to the first, and last column,
+  respectively.}
+
+  \item{sep}{the value to use to make the rownames unique
+  (if necessary)}
+
+  \item{row}{the row index that the newly moved colnames
+  will have - (ie row=1 puts the colnames into the first
+  row). If row=NULL or row > nrow(x), the colnames will be
+  moved to the first, and last row, respectively.}
+
+  \item{colname}{what name should the new column have? only
+  gets set if there was a colname to begin with.}
+
+  \item{rowname}{what name should the new row have? only
+  gets set if there was a rowname to begin with.}
+}
+\value{
+  \code{column2rownames}: \code{x} with 1 less column and
+  with \code{rownames} set
+
+  \code{row2colnames}: \code{x} with 1 less row and with
+  \code{colnames} set
+
+  \code{rownames2col}: a \code{data.frame} with
+  \code{ncol(x) + 1} and the rownames in the extra column.
+  The colclasses will be the same as they were in \code{x},
+  and the rownames will have the class of
+  \dQuote{character}.
+
+  \code{colnames2row}: a \code{data.frame} with
+  \code{nrow(x) + 1} and the colnames in the extra row.
+  The rowclasses will be the same as they were in \code{x},
+  and the colnames will have the class of
+  \dQuote{character}.
+}
+\description{
+  \code{column2rownames}: Move a column of \code{x} to the
+  \code{rownames} and remove it from \code{x}
+
+  \code{row2colnames}: Move a row of x to the colnames and
+  remove it from x
+
+  \code{rownames2col}: Move the rownames of x into a column
+
+  \code{colnames2row}: Move the colnames of x into a row.
+}
+\author{
+  Mark Cowley, 31 May 2006
+
+  Mark Cowley, 31 May 2006
+
+  Mark Cowley, 31 May 2006
+
+  Mark Cowley, 31 May 2006
+}
+
