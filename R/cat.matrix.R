@@ -10,7 +10,6 @@
 #' 
 #' @author Mark Cowley
 #' @export
-#' @importFrom pwbc rownames2col colnames2row
 cat.matrix <- function (x, row.names=TRUE, col.names=TRUE, pad=TRUE, sep=" ") {
 	if(row.names && !is.null(rownames(x))) x <- rownames2col(x, 1, " ")
 	if(col.names && !is.null(colnames(x))) x <- colnames2row(x, 1, " ")
