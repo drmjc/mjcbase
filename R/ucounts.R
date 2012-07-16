@@ -4,20 +4,22 @@
 #' of \code{return.unique=FALSE}
 #'
 #' @param x a character vector
-#' @param return.unique logical: if TRUE, the numeric counts of the unique elements in x
-#'                   are returned (the names indicate the elements in x). NB
-#'                   the order of the returned elements is the same order that
-#'                   unique(x) returns.
-#'
-#'                   if FALSE, then return the numeric counts of each element
-#'                   in x. Useful if you then want to work out which
-#'                   elements have count > 1 and quickly view those elements.
-#'                   NB, the order remains the same as x.
+#' @param return.unique logical: if \code{TRUE}, the numeric counts of the \emph{unique} elements in x
+#'	are returned (the names indicate the elements in x).
+#'	The order of the returned elements is the same order that
+#'	\code{unique(x)} returns.
+#'	If \code{FALSE}, then return the numeric counts of each element
+#'	in x. Useful if you then want to work out which
+#'	elements have count > 1 and quickly view those elements.
+#'	The order remains the same as x.
+#' 
 #' @param issorted logical: to improve the speed of this code, the algorithm first sorts the data.
-#'   If it's already sorted, then save time by setting \code{issorted=FALSE}.
+#'	 If it's already sorted, then save time by setting \code{issorted=FALSE}.
 #' @param sort logical: whether to sort the result vector from highest counts to lowest?
+#' 
 #' @return
-#' a vector of counts, named by the elements of x
+#' a \code{vector} of counts, named by the elements of x
+#' 
 #' @examples
 #' ucounts(c("a", "a", "b", "c", "c"), TRUE)
 #' # a b c
@@ -26,12 +28,12 @@
 #' # a a b c c
 #' # 2 2 1 2 2
 #' ucounts(c("a", "a", "b", "c", "c"), FALSE) > 1
-#' #    a     a     b     c     c
-#' # TRUE  TRUE FALSE  TRUE  TRUE
+#' #	a	  a		b	  c		c
+#' # TRUE  TRUE FALSE  TRUE	 TRUE
 #'
 #' @author Mark Cowley, 11 May 2006
 #' @export
-#'
+#' @keywords util manip
 ucounts <- function(x, return.unique=TRUE, issorted=FALSE, sort=TRUE) {
 	original.x <- x
 
@@ -81,36 +83,36 @@ ucounts <- function(x, return.unique=TRUE, issorted=FALSE, sort=TRUE) {
 
 ## version 1 -- horribly slow!
 ## ucounts <- function(x) {
-##     ux <- unique(x)
+##	   ux <- unique(x)
 ##
-##     res <- rep(1, length(ux))
-##     names(res) <- ux
+##	   res <- rep(1, length(ux))
+##	   names(res) <- ux
 ##
-##     if( length(ux) < length(x) ) {
-##         for(i in 1:length(ux)) {
-##             res[i] <- sum(x==ux[i])
-##         }
-##     }
+##	   if( length(ux) < length(x) ) {
+##		   for(i in 1:length(ux)) {
+##			   res[i] <- sum(x==ux[i])
+##		   }
+##	   }
 ##
-##     return( res )
+##	   return( res )
 ## }
 
 ## version 2
 ## ucounts <- function (x, return.unique = TRUE) {
-##     ux <- unique(x)
-##     if (!return.unique) {
-##         res <- rep(NA, length(x))
-##         names(res) <- x
-##     }
-##     else {
-##         res <- rep(NA, length(ux))
-##         names(res) <- ux
-##     }
-##     for (i in names(res)) {
-##         idx <- which(names(res) == i)
-##         if (all(is.na(res[idx])))
-##             res[idx] <- rep(sum(x == i), length(idx))
-##     }
-##     return(res)
+##	   ux <- unique(x)
+##	   if (!return.unique) {
+##		   res <- rep(NA, length(x))
+##		   names(res) <- x
+##	   }
+##	   else {
+##		   res <- rep(NA, length(ux))
+##		   names(res) <- ux
+##	   }
+##	   for (i in names(res)) {
+##		   idx <- which(names(res) == i)
+##		   if (all(is.na(res[idx])))
+##			   res[idx] <- rep(sum(x == i), length(idx))
+##	   }
+##	   return(res)
 ## }
 
