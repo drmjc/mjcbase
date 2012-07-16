@@ -1,0 +1,24 @@
+\name{midpoints}
+\alias{midpoints}
+\title{Determine the midpoints between a vector of numbers}
+\usage{
+  midpoints(x)
+}
+\arguments{
+  \item{x}{a numeric vector of length >= 2. if unsorted,
+  then it will be sorted. \code{NA}'s will be excluded.}
+}
+\value{
+  a numeric vector of midpoints, of length n-1
+}
+\description{
+  Determine the midpoints between a vector of numbers
+}
+\examples{
+midpoints(c(1,5,9))
+# [1] 3 7
+}
+\author{
+  Mark Cowley, 30 June 2005
+}
+
