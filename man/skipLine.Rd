@@ -1,0 +1,19 @@
+\name{skipLine}
+\alias{skipLine}
+\title{skipLine}
+\usage{
+  skipLine(file)
+}
+\arguments{
+  \item{file}{an open connection}
+}
+\value{
+  nothing
+}
+\description{
+  skip a line from an open file connection
+}
+\author{
+  Mark Cowley
+}
+

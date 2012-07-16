@@ -1,0 +1,44 @@
+\name{pad}
+\alias{pad}
+\title{Pad a number with leading zeros}
+\usage{
+  pad(int, strWidth = NULL, atEnd = FALSE)
+}
+\arguments{
+  \item{int}{a numeric vector, or character vector of
+  numbers}
+
+  \item{strWidth}{the desired width. If \code{NULL}, and
+  \code{length(int)>1}, then this is determined
+  automatically. If \code{NULL}, and \code{length(int)==1},
+  then a single \dQuote{0} is added.}
+
+  \item{atEnd}{logical: pad at the end (\code{TRUE}), or
+  start (\code{FALSE})?}
+}
+\value{
+  a charcter vector, all with the same \code{nchar}.
+}
+\description{
+  Convert a number to a string, and pad out the resulting
+  character with "0" at the start.
+}
+\details{
+  Can supply \code{strWidth} to specify the number of
+  characters desired in the final string. If it's not
+  supplied, then a single "0" is prepended. If \code{int}
+  is a vector of numbers, \code{strWidth} is automatically
+  set so that they all have the same number of characters.
+}
+\examples{
+pad(1, 2)
+pad(1:10, 2)
+pad(1:10)
+}
+\author{
+  Mark Cowley, 2005-09-21
+}
+\seealso{
+  \code{\link{sprintf}}
+}
+

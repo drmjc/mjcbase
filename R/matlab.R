@@ -13,11 +13,11 @@
 #' zeros(5,3)
 #' ones(5,3)
 zeros <- function(nrow, ncol) {
-    matrix(0, nrow, ncol)
+	matrix(0, nrow, ncol)
 }
 
 #' @export
 #' @rdname zeros-ones
 ones <- function(nrow, ncol) {
-    matrix(1, nrow, ncol)
+	matrix(1, nrow, ncol)
 }

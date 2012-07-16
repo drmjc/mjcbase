@@ -10,10 +10,10 @@ count.na <- function(x) {
 	sum(is.na(x))
 	# count <- 0
 	# if(is.matrix(x) || is.data.frame(x)) {
-	#     count <- sum(apply(x, 1, count.na))
+	#	  count <- sum(apply(x, 1, count.na))
 	# }
 	# else {
-	#     count <- sum(is.na(x))
+	#	  count <- sum(is.na(x))
 	# }
 	# return(count)
 }
@@ -32,14 +32,14 @@ count.null <- function(x) {
 	sum(is.null(x))
 	# count <- 0
 	# if(is.matrix(x) || is.data.frame(x)) {
-	#     count <- sum(apply(x, 1, count.null))
+	#	  count <- sum(apply(x, 1, count.null))
 	# }
 	# else {
-	#     count <- sum(is.null(count))
-	#     for(i in 1:length(x)) {
-	#         if(is.null(x[i]))
-	#         count <- count + 1
-	#     }
+	#	  count <- sum(is.null(count))
+	#	  for(i in 1:length(x)) {
+	#		  if(is.null(x[i]))
+	#		  count <- count + 1
+	#	  }
 	# }
 	# return(count)
 }

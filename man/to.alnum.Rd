@@ -1,0 +1,21 @@
+\name{to.alnum}
+\alias{to.alnum}
+\title{convert to alphanumeric}
+\usage{
+  to.alnum(x)
+}
+\arguments{
+  \item{x}{a \code{character} \code{vector}, or an object
+  which can be coerced to a \code{character}
+  \code{vector}.}
+}
+\value{
+  undocumented
+}
+\description{
+  convert to alphanumeric
+}
+\author{
+  Mark Cowley, 2012-07-16
+}
+

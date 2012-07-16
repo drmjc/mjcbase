@@ -1,0 +1,17 @@
+\name{strlen}
+\alias{strlen}
+\title{Length of each string in a vector.}
+\usage{
+  strlen(x)
+}
+\arguments{
+  \item{x}{character vector, or a vector to be coerced to a
+  character vector.  Giving a factor is an error.}
+}
+\description{
+  This is just a wrapper to nchar
+}
+\author{
+  Mark Cowley, 2010-01-09
+}
+

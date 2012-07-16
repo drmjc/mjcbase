@@ -1,0 +1,20 @@
+\name{sourcelog}
+\alias{sourcelog}
+\title{Source all of the functions that are in a log file}
+\usage{
+  sourcelog(file = dir(, pattern = ".log")[1])
+}
+\arguments{
+  \item{file}{the path to a file containing \R functions.}
+}
+\value{
+  the file will be \code{source()}d into the global
+  workspace.
+}
+\description{
+  Source all of the functions that are in a log file
+}
+\author{
+  Mark Cowley, 22 Feb 2006
+}
+

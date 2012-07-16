@@ -1,0 +1,21 @@
+\name{is.alpha}
+\alias{is.alpha}
+\title{is alphabetical?}
+\usage{
+  is.alpha(x)
+}
+\arguments{
+  \item{x}{a \code{character} \code{vector}, or an object
+  which can be coerced to a \code{character}
+  \code{vector}.}
+}
+\value{
+  logical, length 1
+}
+\description{
+  is alphabetical?
+}
+\author{
+  Mark Cowley, 2012-07-16
+}
+

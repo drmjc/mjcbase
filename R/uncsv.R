@@ -13,11 +13,11 @@
 #' @importFrom pwbc trim
 #' @examples
 #' uncsv("hello,quick,brown,fox")
-#' # [1] "hello" "quick" "brown" "fox"  
+#' # [1] "hello" "quick" "brown" "fox"	
 uncsv <- function(x, trim=TRUE) {
-    res <- unlist(strsplit(x, ","))
-    if( trim )
-        res <- trim(res)
+	res <- unlist(strsplit(x, ","))
+	if( trim )
+		res <- trim(res)
 
-    return( res )
+	return( res )
 }

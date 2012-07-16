@@ -1,0 +1,81 @@
+\name{which.2D}
+\alias{which.2D}
+\alias{which.max.2D}
+\alias{which.maxN.2D}
+\alias{which.min.2D}
+\alias{which.minN.2D}
+\title{which.2D}
+\usage{
+  which.2D(x, add.names = FALSE)
+
+  which.min.2D(x, return.ties = FALSE)
+
+  which.minN.2D(x, N, return.ties = FALSE)
+
+  which.max.2D(x, return.ties = FALSE)
+
+  which.maxN.2D(x, N, return.ties = FALSE)
+}
+\arguments{
+  \item{x}{a \code{matrix} or \code{data.frame}}
+
+  \item{add.names}{logical: if \code{TRUE}, add
+  \code{x.name} and \code{y.name} columns to the result}
+
+  \item{return.ties}{logical: if there are ties in the top
+  N, then return all values in the top N, or just N?}
+
+  \item{N}{top 'N' values to return}
+}
+\value{
+  \code{which.2D}: a 2-column matrix of row and column
+  indices, indicating the coordinates of the \code{TRUE}
+  values in \code{x}
+
+  \code{which.min.2D}: a vector of length 2 indicating the
+  x and y indices respectively
+
+  a \code{matrix} with 2 columns, col 1 for the rows and
+  col 2 for the cols
+
+  \code{which.max.2D}: a vector of length 2 indicating the
+  x and y indices respectively
+
+  \code{which.maxN.2D}: a matrix with 2 columns, col 1 for
+  the rows and col 2 for the cols
+}
+\description{
+  \code{which.2D}: Which cells are \code{TRUE} in a
+  matrix-like object
+
+  \code{which.min.2D}: Which is the minimum cell in a
+  matrix-like object
+
+  \code{which.minN.2D}: Which are the minimum N cells in a
+  matrix-like object
+
+  \code{which.max.2D}: Which is the maximum cell in a
+  matrix-like object
+
+  \code{which.maxN.2D}: Which are the maximum N cells in a
+  matrix-like object
+}
+\examples{
+x <- matrix(rnorm(25), 5, 5)
+which.2D(x>1)
+#	  x y
+# [1,] 1 4
+# [2,] 4 3
+}
+\author{
+  Mark Cowley, 12/4/07
+
+  Mark Cowley, 2 Nov 2005
+
+  Mark Cowley, 2 Nov 2005
+
+  Mark Cowley, 2 Nov 2005
+
+  Mark Cowley, 2 Nov 2005
+}
+

@@ -1,0 +1,20 @@
+\name{to.char.array}
+\alias{to.char.array}
+\title{convert a word into a character vector}
+\usage{
+  to.char.array(x)
+}
+\arguments{
+  \item{x}{a \code{character} \code{vector} of \code{length
+  == 1}}
+}
+\value{
+  a charcter vector of words, each of length 1.
+}
+\description{
+  convert a word into a character vector
+}
+\author{
+  Mark Cowley, 2012-07-16
+}
+

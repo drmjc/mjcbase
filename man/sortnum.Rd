@@ -9,7 +9,7 @@
   number}
 
   \item{decreasing}{logical: Should the sort be increasing
-  or decreasing?  Not available for partial sorting.}
+  or decreasing? Not available for partial sorting.}
 }
 \value{
   a sorted charcter vector

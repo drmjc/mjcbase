@@ -8,11 +8,11 @@
 #' @export
 #' @rdname density_tri
 density_upper_tri <- function(x, ...) {
-    density( x[upper.tri(x)], ...)
+	density( x[upper.tri(x)], ...)
 }
 
 #' @export
 #' @rdname density_tri
 density_lower_tri <- function(x, ...) {
-    density( x[lower.tri(x)], ... )
+	density( x[lower.tri(x)], ... )
 }

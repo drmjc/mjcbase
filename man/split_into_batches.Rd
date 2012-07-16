@@ -1,0 +1,29 @@
+\name{split_into_batches}
+\alias{split_into_batches}
+\title{split x into N batches each of a specific size.}
+\usage{
+  split_into_batches(x, N = NULL, batch.size = NULL)
+}
+\arguments{
+  \item{x}{either a numeric vector, or a value specifying
+  the length of the data}
+
+  \item{N}{how many batches}
+
+  \item{batch.size}{if specified, then make the batches
+  \code{batch.size} long; if \code{NULL}, then the
+  \code{batch.size} is determined from \code{x/N}.}
+}
+\value{
+  A list with N entries, each entry being a vector of
+  values from x. If the \code{batch.size} is set too high
+  given the length of x and N, then empty batches are not
+  included or returned
+}
+\description{
+  split x into N batches each of a specific size.
+}
+\author{
+  Mark Cowley, 9 June 2005
+}
+

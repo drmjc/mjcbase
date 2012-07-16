@@ -1,0 +1,25 @@
+\name{readLine}
+\alias{readLine}
+\title{readLine, and split on character}
+\usage{
+  readLine(file, split = " +", ok = FALSE)
+}
+\arguments{
+  \item{file}{a file, or open connection}
+
+  \item{split}{the character to split on. eg tab, comma, or
+  default=spaces}
+
+  \item{ok}{unused}
+}
+\value{
+  a character vector of length >= 0
+}
+\description{
+  read a single line from a file, or connection, and then
+  split the result on a separator. eg tab, comma, or spaces
+}
+\author{
+  Mark Cowley
+}
+

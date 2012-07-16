@@ -12,8 +12,8 @@
 #' @export
 #' @importFrom pwbc rownames2col colnames2row
 cat.matrix <- function (x, row.names=TRUE, col.names=TRUE, pad=TRUE, sep=" ") {
-    if(row.names && !is.null(rownames(x))) x <- rownames2col(x, 1, " ")
-    if(col.names && !is.null(colnames(x))) x <- colnames2row(x, 1, " ")
+	if(row.names && !is.null(rownames(x))) x <- rownames2col(x, 1, " ")
+	if(col.names && !is.null(colnames(x))) x <- colnames2row(x, 1, " ")
 	if( pad ) {
 		for(i in 1:ncol(x)) {
 			x[,i] <- as.character(x[,i])
@@ -22,11 +22,11 @@ cat.matrix <- function (x, row.names=TRUE, col.names=TRUE, pad=TRUE, sep=" ") {
 			x[,i] <- sprintf(cmd, x[,i])
 		}
 	}
-    for (i in 1:nrow(x)) {
-        for (j in 1:ncol(x)) {
-            cat(x[i, j], sep, sep = "")
-        }
-        cat("\n")
-    }
+	for (i in 1:nrow(x)) {
+		for (j in 1:ncol(x)) {
+			cat(x[i, j], sep, sep = "")
+		}
+		cat("\n")
+	}
 }
 
