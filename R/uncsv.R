@@ -10,7 +10,6 @@
 #' 
 #' @author Mark Cowley, 2012-07-16
 #' @export
-#' @importFrom pwbc trim
 #' @examples
 #' uncsv("hello,quick,brown,fox")
 #' # [1] "hello" "quick" "brown" "fox"	
