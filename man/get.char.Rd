@@ -1,0 +1,22 @@
+\name{get.char}
+\alias{get.char}
+\title{get a specific character from a word}
+\usage{
+  get.char(x, idx)
+}
+\arguments{
+  \item{x}{a \code{character} \code{vector} of length >= 1}
+
+  \item{idx}{the index into the characters, starting from
+  1}
+}
+\value{
+  a character vector
+}
+\description{
+  get a specific character from a word
+}
+\author{
+  Mark Cowley, 2012-07-16
+}
+
