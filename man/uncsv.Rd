@@ -1,0 +1,26 @@
+\name{uncsv}
+\alias{uncsv}
+\title{uncsv}
+\usage{
+  uncsv(x, trim = TRUE)
+}
+\arguments{
+  \item{x}{a character vector of length >= 1}
+
+  \item{trim}{logical: trim whitespace? default=TRUE}
+}
+\value{
+  a character vector of words, split on comma's
+}
+\description{
+  convert character vector where each element is composed
+  of comma separated elements, into a character vector.
+}
+\examples{
+uncsv("hello,quick,brown,fox")
+# [1] "hello" "quick" "brown" "fox"
+}
+\author{
+  Mark Cowley, 2012-07-16
+}
+
