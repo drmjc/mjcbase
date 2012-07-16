@@ -1,5 +1,5 @@
 Package: mjcbase
-Version: 1.0.0
+Version: 1.0.1
 Date: 2012-07-16
 Title: General helper functions for dealing with R objects/data types
 Author: Mark Cowley <m.cowley@garvan.org.au>
@@ -43,6 +43,9 @@ Collate:
     'time_diff.R'
     'ucounts.R'
     'rep_list.R'
+    'column2rownames.R'
+    'trim.R'
+    'colclasses.R'
+    'recycle.R'
 Imports:
-    pwbc,
     stats
