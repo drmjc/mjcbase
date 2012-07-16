@@ -1,0 +1,25 @@
+\name{rep_list}
+\alias{rep_list}
+\title{repeat x N times to make an N element list}
+\usage{
+  rep_list(x, N = 1)
+}
+\arguments{
+  \item{x}{an object}
+
+  \item{N}{an integer > 1}
+}
+\value{
+  a \code{list} or \code{length=N} where each element is
+  \code{x}
+}
+\description{
+  repeat x N times to make an N element list
+}
+\examples{
+rep_list(letters[1:4], 5)
+}
+\author{
+  Mark Cowley, 7 April 2006
+}
+
