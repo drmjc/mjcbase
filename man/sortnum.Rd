@@ -1,0 +1,27 @@
+\name{sortnum}
+\alias{sortnum}
+\title{sort numerically}
+\usage{
+  sortnum(x, decreasing = FALSE)
+}
+\arguments{
+  \item{x}{character vector where each word may contain a
+  number}
+
+  \item{decreasing}{logical: Should the sort be increasing
+  or decreasing?  Not available for partial sorting.}
+}
+\value{
+  a sorted charcter vector
+}
+\description{
+  sort a vector of words numerically, as opposed to
+  alphanumerically. If your words contain a number, eg
+  string1, string2, string3, ..., string10 then the
+  standard sort would return string10, string1, string2,
+  ... and converting to numeric would fail.
+}
+\author{
+  Mark Cowley, 2005-05-03
+}
+
