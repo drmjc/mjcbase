@@ -1,15 +1,30 @@
-# Function to merge a set of numbers into a range.
-# Useful for working out what is the minimal information to describe a series
-# of numbers
-#
-# eg:
-#  1, 2, 3, 4, 5, 9 -> 1-5, 9
-#
-# see range.merge.makers
-#
-#
-#
-range.merge <- function(x, gaplength=0) {
+#' merge a set of numbers into a range.
+#' 
+#' Useful for working out what is the minimal information to describe a series
+#' of numbers
+#' 
+#' @note This is almost certainly replaceble using code from IRanges package,
+#' and Rle obects.
+#' 
+#' @param x a numeric \code{vector}
+#' @param gaplength allow a gap within a run. default=0
+#' 
+#' @author Mark Cowley
+#' @export
+#' @examples
+#' x <- c(1, 2, 3, 4, 5, 9)
+#' range_merge(x)
+#' #   from to
+#' # 1    1  5
+#' # 2    9  9
+#' range_merge(x, gaplength=3)
+#' #   from to
+#' # 1    1  9
+#' range_merge(x, gaplength=2)
+#' #   from to
+#' # 1    1  5
+#' # 2    9  9
+range_merge <- function(x, gaplength=0) {
     x <- unique( sort(x, na.last = NA) )
 
     if( length(x) == 0 )
@@ -55,4 +70,3 @@ range.merge <- function(x, gaplength=0) {
 
     return( res )
 }
-
