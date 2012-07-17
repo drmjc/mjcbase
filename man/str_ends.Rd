@@ -1,8 +1,11 @@
-\name{str.right}
-\alias{str.right}
-\title{From a character vector of lenght >= 1, determine the last n characters.}
+\name{str_right}
+\alias{str_left}
+\alias{str_right}
+\title{From a character vector of length >= 1, determine the first or last n characters.}
 \usage{
-  str.right(x, n)
+  str_right(x, n)
+
+  str_left(x, n)
 }
 \arguments{
   \item{x}{a character vector}
