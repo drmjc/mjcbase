@@ -7,6 +7,6 @@
 #' @author Mark Cowley, 2012-07-16
 #' @export
 rm.na <- function(x) {
-	.Defunct(na.omit)
+	.Defunct("na.omit")
 	return(x[!is.na(x)])
 }
