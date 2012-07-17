@@ -1,0 +1,24 @@
+\name{dir.size}
+\alias{dir.size}
+\title{directory size
+This determines the size of a directory by adding the size of the individual files}
+\usage{
+  dir.size(x, unit = c("bytes", "KB", "MB", "GB"))
+}
+\arguments{
+  \item{x}{a vector of directory path(s)}
+
+  \item{unit}{for displaying object size: "bytes", "KB",
+  "MB", or first letter. default="bytes"}
+}
+\value{
+  a vector of sizes in \code{units}
+}
+\description{
+  directory size This determines the size of a directory by
+  adding the size of the individual files
+}
+\author{
+  Mark Cowley, 2012-02-13
+}
+

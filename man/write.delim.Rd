@@ -1,0 +1,62 @@
+\name{write.delim}
+\alias{write.delim}
+\title{Write a matrix-like object as a tab-delimited txt file.
+This method writes tab delimited files and offers enhanced control over the
+writing of a row.names column.}
+\usage{
+  write.delim(x, file, na = "---", row.names = FALSE,
+    col.names = TRUE, append = FALSE, ...)
+}
+\arguments{
+  \item{x}{a \code{matrix} or \code{data.frame}}
+
+  \item{file}{The file name (including path) which will be
+  created. It will be over-written without warning.}
+
+  \item{na}{What to replace \code{NA}'s with. Sensible
+  options include \dQuote{---} (the default), \dQuote{}, or
+  \dQuote{-}.}
+
+  \item{row.names}{either \code{TRUE}, \code{FALSE},
+  \code{NULL}, \code{NA}, or a \code{character(1)}.  See
+  Details.}
+
+  \item{col.names}{logical: If \code{TRUE} then write out
+  the column names.}
+
+  \item{append}{logical: if \code{TRUE}, then append to
+  end, else overwrite the file.}
+
+  \item{\dots}{Further arguments passed to
+  \code{\link{write.table}}}
+}
+\value{
+  a tab-delimited txt file is written out.
+}
+\description{
+  Writing row names.\cr Allowable values for
+  \code{row.names} are: \tabular{ll}{ \code{TRUE} \tab row
+  names are written with a blank column header \cr
+  \code{FALSE} \tab no row names are written \cr
+  \code{NULL} or \code{NA} \tab row names are written, with
+  no column header, just like \code{\link{write.table}} \cr
+  the name of a column \tab row names will be written, with
+  the column header set to the value of \code{row.names} }
+  Note that If \code{x} has no row and/or column names,
+  then no row and/or column names \cr will be written, no
+  matter what the settings for \code{row.names} or
+  \code{col.names} are.\cr
+}
+\details{
+  If you use the default options, then it works nicely with
+  \code{\link{read.delim}}.
+}
+\author{
+  Mark Cowley
+}
+\seealso{
+  \code{\link{write.table}}, \code{\link{read.delim}}
+}
+\keyword{file}
+\keyword{IO}
+

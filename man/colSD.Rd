@@ -1,0 +1,21 @@
+\name{colSD}
+\alias{colSD}
+\title{Standard deviation of each column}
+\usage{
+  colSD(x, na.rm = TRUE)
+}
+\arguments{
+  \item{x}{a \code{matrix} or \code{data.frame}}
+
+  \item{na.rm}{logical: remove \code{NA}'s?}
+}
+\value{
+  the SD of each column
+}
+\description{
+  Standard deviation of each column
+}
+\author{
+  Mark Cowley
+}
+

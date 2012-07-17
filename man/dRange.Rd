@@ -1,0 +1,23 @@
+\name{dRange}
+\alias{dRange}
+\title{What is the delta-range, ie the distance between min and max?}
+\usage{
+  dRange(x, na.rm = TRUE)
+}
+\arguments{
+  \item{x}{a vector}
+
+  \item{na.rm}{logical: remove the NA's prior to
+  calculating min/max}
+}
+\value{
+  a numeric(1) containing the range from min to max
+}
+\description{
+  What is the delta-range, ie the distance between min and
+  max?
+}
+\author{
+  Mark Cowley, 2009-06-04
+}
+

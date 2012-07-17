@@ -1,0 +1,66 @@
+\name{write.venn.3D.xls}
+\alias{write.venn.3D.xls}
+\title{Write a 3D Venn diagram to an Excel file.
+Compare 3 vectors, and export an XLS file listing 9 comparisons:\cr
+\tabular{l}{
+	union \cr
+	intersection \cr
+	only in x \cr
+	only in y \cr
+	only in z. \cr
+	only in x and y \cr
+	only in x and z \cr
+	only in y and z \cr
+	only in 2 of the 3 comparisons \cr
+}}
+\usage{
+  write.venn.3D.xls(x, y, z, file,
+    names = c("A", "B", "C"), sortfun = sort,
+    exportXYZ = FALSE)
+}
+\arguments{
+  \item{x}{a vector}
+
+  \item{y}{a vector}
+
+  \item{z}{a vector}
+
+  \item{file}{the xls file to write to}
+
+  \item{names}{a character[3] corresponding to the names
+  for \code{x}, \code{y} and \code{z}}
+
+  \item{sortfun}{the function to sort the elements}
+
+  \item{exportXYZ}{logical: if TRUE, then the original x,
+  y, z values are written in first 3 columns}
+}
+\value{
+  a 9 or 12 column XLS file is written, with these names:
+  \item{x}{All values in x, if exportXYZ=TRUE} \item{y}{All
+  values in x, if exportXYZ=TRUE} \item{z}{All values in x,
+  if exportXYZ=TRUE} \item{only in x}{Those values only
+  found in x} \item{only in y}{Those values only found in
+  y} \item{only in z}{Those values only found in z}
+  \item{only in x and y}{Those values only found in x and y
+  (ie not in the intersection of all 3)} \item{only in x
+  and z}{Those values only found in x and y (ie not in the
+  intersection of all 3)} \item{only in y and z}{Those
+  values only found in x and y (ie not in the intersection
+  of all 3)} \item{only in any 2}{Those values only found
+  in any of the pairwise comparisons, and not in
+  intersection of all 3} \item{intersect}{Those values in
+  all 3} \item{union}{Those values in any gene list}
+}
+\description{
+  Optionally, the 3 input vectors can be exported via the
+  \code{exportXYZ=TRUE} parameter.
+}
+\examples{
+f <- tempfile()
+write.venn.3D.xls(LETTERS[1:10], LETTERS[7:15], LETTERS[9:20], f)
+}
+\author{
+  Mark Cowley, 2009-02-02
+}
+

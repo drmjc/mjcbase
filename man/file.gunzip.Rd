@@ -1,0 +1,23 @@
+\name{file.gunzip}
+\alias{file.gunzip}
+\title{gunzip a file.}
+\usage{
+  file.gunzip(from, to = NULL)
+}
+\arguments{
+  \item{from}{the absolute or relative to ~ path of the
+  file to unzip}
+
+  \item{to}{instead of unzipping '<from>.gz' to <from>,
+  unzip to <to>}
+}
+\value{
+  invisibly returns the filename of the unzipped file.
+}
+\description{
+  gunzip a file.
+}
+\author{
+  Mark Cowley, 28 Oct 2005
+}
+

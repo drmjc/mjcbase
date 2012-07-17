@@ -1,0 +1,25 @@
+\name{alleq}
+\alias{alleq}
+\title{Are all values equal?}
+\usage{
+  alleq(x)
+}
+\arguments{
+  \item{x}{a vector}
+}
+\value{
+  logical: \code{TRUE} if all elements are the same
+}
+\description{
+  Are all values equal?
+}
+\examples{
+x <- rep(1,5)
+alleq(x)
+alleq(letters)
+# [1] FALSE
+}
+\author{
+  Mark Cowley, 2011-07-18
+}
+

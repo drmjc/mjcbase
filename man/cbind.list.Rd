@@ -1,0 +1,22 @@
+\name{cbind.list}
+\alias{cbind.list}
+\title{column bind the elements in a list together.}
+\usage{
+  cbind.list(..., sep = ".")
+}
+\arguments{
+  \item{\dots}{either 1 list of \code{cbind}-able objects,
+  or at least 2 \code{cbind}-able objects}
+
+  \item{sep}{the seperator character to make the col.names
+  unique, only if necessary}
+}
+\description{
+  You can either supply many variables that are
+  col-bindable, (ie are the right dimension), or one list
+  argument containing matrices that can be col-binded.
+}
+\author{
+  Mark Cowley, 5 April 2006
+}
+

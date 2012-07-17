@@ -1,0 +1,24 @@
+\name{file.move}
+\alias{file.move}
+\title{move files into a directory}
+\usage{
+  file.move(files, dir)
+}
+\arguments{
+  \item{files}{character vector, containing file name(s) or
+  path(s).}
+
+  \item{dir}{character(1) the path to a directory}
+}
+\value{
+  logical vector
+}
+\description{
+  Even if the files in \code{files} are from different
+  paths, they will all end up in the same \code{dir}, ie
+  the sub-paths that differ will not be preserved.
+}
+\author{
+  Mark Cowley, 2011-11-09
+}
+

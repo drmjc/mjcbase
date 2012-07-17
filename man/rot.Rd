@@ -1,0 +1,28 @@
+\name{rot}
+\alias{rot}
+\title{Rotate values}
+\usage{
+  rot(x, start.idx)
+}
+\arguments{
+  \item{x}{a vector of values}
+
+  \item{start.idx}{the index of the new first element in
+  \code{x}}
+}
+\value{
+  a vector same length and type as \code{x}
+}
+\description{
+  Rotate a vector of values, starting from (1:N), (2:N,1),
+  (3:N,1,2), (4:N,1:3), \dots
+}
+\examples{
+rot(LETTERS[1:5],1)
+rot(LETTERS[1:5],3)
+rot(LETTERS[1:5],5)
+}
+\author{
+  Mark Cowley 2008-05-13
+}
+

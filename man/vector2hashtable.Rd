@@ -1,0 +1,25 @@
+\name{vector2hashtable}
+\alias{vector2hashtable}
+\title{Convert a vector to a hashtable
+Take a vector of words, and convert the indices of each word into a
+hashtable.}
+\usage{
+  vector2hashtable(x, warn = TRUE)
+}
+\arguments{
+  \item{x}{a character vector, with non-unique items.
+  sorting is not required.}
+
+  \item{warn}{logical: warn if the keys are >255 characters
+  long.}
+}
+\description{
+  Useful for collapsing a many-to-one vector, where each
+  'key' may be found > 1 times and you want some logic to
+  choose the best row for each key. Hashtable keys have to
+  be <255 characters in length.
+}
+\author{
+  Mark Cowley, 2009-07-13
+}
+

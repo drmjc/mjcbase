@@ -1,0 +1,24 @@
+\name{which.percentile}
+\alias{which.percentile}
+\title{For a numeric vector x, return which percentile each data point is in}
+\usage{
+  which.percentile(x)
+}
+\arguments{
+  \item{x}{numeric vector}
+}
+\value{
+  return the percentile of each data point is in, relative
+  to the whole vector.
+}
+\description{
+  For a numeric vector x, return which percentile each data
+  point is in
+}
+\author{
+  Mark Cowley, 2008-12-22
+}
+\seealso{
+  \code{\link{which.quartile}}
+}
+

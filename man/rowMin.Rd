@@ -1,0 +1,25 @@
+\name{rowMin}
+\alias{rowMin}
+\title{row-wise minimum}
+\usage{
+  rowMin(x, na.rm = TRUE)
+}
+\arguments{
+  \item{x}{a \code{matrix} or \code{data.frame}}
+
+  \item{na.rm}{logical: remove NA's?}
+}
+\value{
+  a vector of minima, 1 per row in \code{x}
+}
+\description{
+  row-wise minimum
+}
+\examples{
+m <- matrix(1:25,5,5)
+rowMin(m)
+}
+\author{
+  Mark Cowley, 2011-10-20
+}
+

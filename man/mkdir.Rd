@@ -1,0 +1,43 @@
+\name{mkdir}
+\alias{mkdir}
+\title{Manipulaton of Directories and File Permissions}
+\usage{
+  mkdir(path, showWarnings = TRUE, recursive = FALSE,
+    mode = "0777")
+}
+\arguments{
+  \item{path}{a character vector containing a single path
+  name.  Tilde expansion (see \code{\link{path.expand}}) is
+  done.}
+
+  \item{showWarnings}{logical; should the warnings on
+  failure be shown?}
+
+  \item{recursive}{logical. Should elements of the path
+  other than the last be created?  If true, like the Unix
+  command \command{mkdir -p}.}
+
+  \item{mode}{the mode to be used on Unix-alikes: it will
+  be coerced by \code{\link{as.octmode}}.  For
+  \code{Sys.chmod} it is recycled along \code{paths}.}
+}
+\value{
+  mkdir returns invisibly a logical vector indicating if
+  the operation succeeded for each of the files attempted.
+  Using a missing value for a path name will always be
+  regarded as a failure.  \code{dir.create} indicates
+  failure if the directory already exists.  If
+  \code{showWarnings = TRUE}, \code{dir.create} will give a
+  warning for an unexpected failure (e.g. not for a missing
+  value nor for an already existing component for
+  \code{recursive = TRUE}).
+}
+\description{
+  This is a wrapper around
+  \code{base::\link[base]{dir.create}}, which creates
+  directories.
+}
+\author{
+  Ross Ihaka, Brian Ripley
+}
+

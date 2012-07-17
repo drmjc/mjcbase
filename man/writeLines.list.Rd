@@ -1,0 +1,42 @@
+\name{writeLines.list}
+\alias{writeLines.list}
+\title{Write a list of vectors out to a file}
+\usage{
+  writeLines.list(text, con = stdout(), sep = "\t",
+    eol = "\n", useBytes = FALSE, names = FALSE)
+}
+\arguments{
+  \item{text}{a list of vectors}
+
+  \item{con}{a connection, or path to a filename}
+
+  \item{sep}{the seperator between elements}
+
+  \item{eol}{the end of line character}
+
+  \item{useBytes}{logical: see Details of
+  \code{\link{writeLines}}}
+
+  \item{names}{logical: if \code{TRUE}, and \code{text} has
+  valid names, write those names at the start of each
+  line.}
+}
+\value{
+  none. write a file.
+}
+\description{
+  Write a list of vectors out to a file. Each vector will
+  appear on its own line, with each element within that
+  vector separated by \code{sep}.
+}
+\examples{
+x <- list(A=letters, B=LETTERS, C=1:10)
+f <- tempfile()
+writeLines.list(x, f)
+f2 <- tempfile()
+writeLines.list(x, f2, names=TRUE)
+}
+\author{
+  Mark Cowley, 2011-08-05
+}
+

@@ -1,0 +1,25 @@
+\name{rbind.list}
+\alias{rbind.list}
+\title{rbind the elements in a list together.}
+\usage{
+  rbind.list(..., sep = ".")
+}
+\arguments{
+  \item{\dots}{either a single list of tables, or multiple
+  tables to rbind, where table means \code{matrix} or
+  \code{data.frame}}
+
+  \item{sep}{currently unused}
+}
+\value{
+  a large table with all elements in the list rbind-ed
+}
+\description{
+  You can either supply many variables that are
+  row-bindable, (ie are the right dimension), or one list
+  argument containing matrices that can be row-binded
+}
+\author{
+  Mark Cowley, 5 April 2006
+}
+

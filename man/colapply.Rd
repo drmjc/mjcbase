@@ -1,0 +1,23 @@
+\name{colapply}
+\alias{colapply}
+\title{apply FUN to columns}
+\usage{
+  colapply(x, FUN, ...)
+}
+\arguments{
+  \item{x}{a \code{matrix} or \code{data.frame}}
+
+  \item{FUN}{a function}
+
+  \item{\dots}{further arguments passed to FUN}
+}
+\value{
+  the result of running FUN on each column
+}
+\description{
+  apply FUN to columns
+}
+\author{
+  Mark Cowley
+}
+

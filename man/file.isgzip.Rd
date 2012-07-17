@@ -1,0 +1,20 @@
+\name{file.isgzip}
+\alias{file.isgzip}
+\title{Is the file a gzip file?}
+\usage{
+  file.isgzip(f)
+}
+\arguments{
+  \item{f}{the path to a file name}
+}
+\value{
+  \code{TRUE} if \code{f} is a gzipped file, \code{FALSE}
+  otherwise
+}
+\description{
+  Is the file a gzip file?
+}
+\author{
+  Mark Cowley, 2009-01-13
+}
+

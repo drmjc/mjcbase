@@ -1,0 +1,32 @@
+\name{squashWarnings}
+\alias{squashWarnings}
+\title{Catch any warnings & convert them to messages}
+\usage{
+  squashWarnings(expr)
+}
+\arguments{
+  \item{expr}{an expression that might generate a warning}
+}
+\value{
+  The result of executing expression. One message is
+  returned per warning, with each message having the form
+  \sQuote{WARNING: w\$message}
+}
+\description{
+  Evaluate an expression which may generate warnings.
+  Instead of printing the often terse warning to stderr,
+  instead catch the warnings, print them to stdout using
+  the message mechanism.
+}
+\examples{
+# no warning or error
+squashWarnings(1:5)
+# warning thrown
+squashWarnings(warning("My warning message"))
+# errors are still thrown:
+squashWarnings(log("x"))
+}
+\author{
+  Mark Cowley
+}
+

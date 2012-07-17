@@ -1,0 +1,32 @@
+\name{dir.remove}
+\alias{dir.remove}
+\title{Remove directories that are not empty.}
+\usage{
+  dir.remove(d, debug = FALSE)
+}
+\arguments{
+  \item{d}{a path to a directory (or a file)}
+
+  \item{debug}{logical: print helpful messages?}
+}
+\value{
+  \code{TRUE} or \code{FALSE} based on success. the
+  directory will be deleted. If \code{FALSE}, you will
+  probably get a message like this:\cr [1] FALSE Warning
+  message: In file.remove("blah", recursive = TRUE) :
+  cannot remove file 'blah', reason 'Directory not
+  empty'\cr This probably means that you have hidden files
+  somewhere which prevent the directory from being deleted.
+  Warnings: if you have any hidden files, then this code
+  will break. e.g. \dQuote{.DS_Store} or \dQuote{._xyz}
+  files.
+}
+\description{
+  Unlike \code{\link{file.remove}} which only removes files
+  or empty directories, this one will recursively delete a
+  directory.
+}
+\author{
+  Mark Cowley, 2009-10-15
+}
+

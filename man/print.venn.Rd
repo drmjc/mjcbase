@@ -1,0 +1,29 @@
+\name{print.venn}
+\alias{print.venn}
+\title{A printed representation of a 2D venn diagram}
+\usage{
+  print.venn(x, y)
+}
+\arguments{
+  \item{x}{a vector}
+
+  \item{y}{a vector}
+}
+\value{
+  none. prints to stdout
+}
+\description{
+  \code{~} means NOT so A~B means in A, but not in B\cr
+  \code{&} means AND, i.e. intersection\cr \code{|} means
+  OR, i.e. union\cr
+}
+\examples{
+print.venn(1:10, 5:20)
+#   A ~ B A & B B ~ A A | B
+# N     4     6    10    20
+# \%    20    30    50   100
+}
+\author{
+  Mark Cowley, 19 April 2006
+}
+

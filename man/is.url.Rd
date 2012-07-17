@@ -1,0 +1,22 @@
+\name{is.url}
+\alias{is.url}
+\title{Which entries are URL's.}
+\usage{
+  is.url(x)
+}
+\arguments{
+  \item{x}{a character vector.}
+}
+\value{
+  a logical vector of length x. values are TRUE if the
+  entry looks like a URL. NB the URL's are not checked for
+  404 (dead links) errors.
+}
+\description{
+  x must start with http://, ftp://, or file:// See also
+  download.file
+}
+\author{
+  Mark Cowley, 2009-12-11
+}
+

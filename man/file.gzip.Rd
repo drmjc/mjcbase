@@ -1,0 +1,19 @@
+\name{file.gzip}
+\alias{file.gzip}
+\title{gzip a file.}
+\usage{
+  file.gzip(from)
+}
+\arguments{
+  \item{from}{the file name to be gzipped}
+}
+\value{
+  none. side effect of gzipping a file.
+}
+\description{
+  gzip a file.
+}
+\author{
+  Mark Cowley, 27 May 2005
+}
+

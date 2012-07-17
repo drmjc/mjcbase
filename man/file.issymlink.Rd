@@ -1,0 +1,31 @@
+\name{file.issymlink}
+\alias{file.issymlink}
+\title{is the file a symbolic link?}
+\usage{
+  file.issymlink(f)
+}
+\arguments{
+  \item{f}{the path to file name(s)}
+}
+\value{
+  a logical vector
+}
+\description{
+  is the file a symbolic link?
+}
+\note{
+  This only works on unix-alikes, ie not windows.
+}
+\examples{
+f1 <- tempfile()
+writeLines(letters, f1)
+f2 <- tempfile()
+file.symlink(f1, f2)
+file.issymlink(c(f1, f2))
+# [1] FALSE  TRUE
+unlink(c(f1, f2))
+}
+\author{
+  Mark Cowley, 2012-07-16
+}
+

@@ -1,0 +1,46 @@
+\name{write.venn.2D.xls}
+\alias{write.venn.2D.xls}
+\title{Write a 2D Venn diagram to an Excel file.
+Compare 2 vectors, and export an XLS file listing 4 comparisons: union,
+intersection, only in x, or y
+Optionally, the 2 input vectors can be
+exported via the \code{exportXY=TRUE} parameter.}
+\usage{
+  write.venn.2D.xls(x, y, file, names = c("A", "B"),
+    sortfun = sort, exportXY = FALSE)
+}
+\arguments{
+  \item{x}{a vector}
+
+  \item{y}{a vector}
+
+  \item{file}{the xls file to write to}
+
+  \item{names}{a character[2] corresponding to the names
+  for \code{x} and \code{y}}
+
+  \item{sortfun}{the function to sort the elements}
+
+  \item{exportXY}{logical: if TRUE, then the original x, y
+  values are written in first 2 columns}
+}
+\value{
+  a 4 column XLS file is written, with these names:
+  \dQuote{only in x}, \dQuote{only in y},
+  \dQuote{intersect}, \dQuote{union}
+}
+\description{
+  Write a 2D Venn diagram to an Excel file. Compare 2
+  vectors, and export an XLS file listing 4 comparisons:
+  union, intersection, only in x, or y Optionally, the 2
+  input vectors can be exported via the
+  \code{exportXY=TRUE} parameter.
+}
+\examples{
+f <- tempfile()
+write.venn.2D.xls(LETTERS[1:10], LETTERS[7:15], f)
+}
+\author{
+  Mark Cowley, 2009-02-02
+}
+

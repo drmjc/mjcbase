@@ -1,0 +1,33 @@
+\name{lbind}
+\alias{lbind}
+\title{Bind any number of lists together
+Bind the elements within N lists into a larger list. Note this is not the same as
+making a list with the N lists within it.
+Consider 5 lists, each with 2 elements. this function will create a result with
+10 elements.}
+\usage{
+  lbind(...)
+}
+\arguments{
+  \item{\dots}{at least 2 \code{list} objects.}
+}
+\value{
+  one \code{list} with all the elements of \dots combined
+  together
+}
+\description{
+  Bind any number of lists together Bind the elements
+  within N lists into a larger list. Note this is not the
+  same as making a list with the N lists within it.
+  Consider 5 lists, each with 2 elements. this function
+  will create a result with 10 elements.
+}
+\examples{
+a <- list(A=1:5, B=6:10, C=11:15)
+b <- list(D=16:20, E=21:25, F=26:30)
+lbind(a, b)
+}
+\author{
+  Mark Cowley, 1 Sept, 2005
+}
+

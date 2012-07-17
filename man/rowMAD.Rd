@@ -1,0 +1,22 @@
+\name{rowMAD}
+\alias{rowMAD}
+\title{Apply the mad function to each row of a matrix-like object}
+\usage{
+  rowMAD(x, ...)
+}
+\arguments{
+  \item{x}{a matrix-like object}
+
+  \item{\dots}{other arguments passed to apply}
+}
+\value{
+  a numeric vector of MAD scores
+}
+\description{
+  Apply the mad function to each row of a matrix-like
+  object
+}
+\author{
+  Mark Cowley, 2008-12-16
+}
+

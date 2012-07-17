@@ -1,0 +1,24 @@
+\name{na.rm}
+\alias{na.rm}
+\title{remove the \code{NA}s from a vector}
+\usage{
+  na.rm(x)
+}
+\arguments{
+  \item{x}{a vector with some \code{NA}s}
+}
+\value{
+  a vector with no \code{NA}s in it
+}
+\description{
+  remove the \code{NA}s from a vector
+}
+\examples{
+x <- c(4,6,NA,8,9)
+na.rm(x)
+# c(4,6,8,9)
+}
+\author{
+  Mark Cowley, 2011-07-18
+}
+

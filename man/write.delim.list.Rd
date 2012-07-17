@@ -1,0 +1,23 @@
+\name{write.delim.list}
+\alias{write.delim.list}
+\title{Export a list of single tables into the same tab delimited file, seperated
+by the name of each table.}
+\usage{
+  write.delim.list(x, f, ...)
+}
+\arguments{
+  \item{x}{a list of data.frames}
+
+  \item{f}{the output file name}
+
+  \item{\dots}{additional arguments to write.delim}
+}
+\description{
+  If the tables all have the same column names, then the
+  very first row in the resulting file will be the column
+  names, and the rest will not use colnames
+}
+\author{
+  Mark Cowley, 2008-10-01
+}
+

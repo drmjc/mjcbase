@@ -1,0 +1,25 @@
+\name{colMin}
+\alias{colMin}
+\title{column-wise minimum}
+\usage{
+  colMin(x, na.rm = TRUE)
+}
+\arguments{
+  \item{x}{a \code{matrix} or \code{data.frame}}
+
+  \item{na.rm}{logical: remove NA's?}
+}
+\value{
+  a vector of minima, 1 per column in \code{x}
+}
+\description{
+  column-wise minimum
+}
+\examples{
+m <- matrix(1:25,5,5)
+colMin(m)
+}
+\author{
+  Mark Cowley, 2011-10-20
+}
+
