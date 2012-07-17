@@ -11,6 +11,8 @@
 #' pattern is found.
 #' 
 #' @param patterns a character vector of at least one pattern.
+#' @param x	a character vector where matches are sought, or an object
+#'   which can be coerced by \code{as.character} to a character vector.
 #' @inheritParams base::grep
 #' @param nomatch if a pattern isn't found, what should be returned for that element in the
 #'  result \code{list}? default=\code{NA} which just reports an \code{NA}. \code{NULL} is
