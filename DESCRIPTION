@@ -1,5 +1,5 @@
 Package: mjcbase
-Version: 1.0.2
+Version: 1.0.3
 Date: 2012-07-17
 Title: General helper functions for dealing with R objects/data types
 Author: Mark Cowley <m.cowley@garvan.org.au>
