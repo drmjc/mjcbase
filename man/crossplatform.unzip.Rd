@@ -1,0 +1,54 @@
+\name{crossplatform.unzip}
+\alias{crossplatform.unzip}
+\title{Unzip a zip archive file
+Unzip a zip archive file, crossplatform - ie on mac, windows and linux
+If \code{zip.filename} is a URL, it is first downlaoded to \code{dest}
+On MacOS, this function removes the hidden ._ files, and __MACOSX folder
+which get created by the Finder>Create Archive program on some Mac platforms.
+As with all zip files, if the zipped files are not within a subdirectory,
+they will all be extracted to \code{destdir}, so you may want to ensure
+that the \code{destdir} is clean and empty}
+\usage{
+  crossplatform.unzip(zip.filename, dest = NULL,
+    verbose = FALSE)
+}
+\arguments{
+  \item{zip.filename}{the path, or url to a single zip
+  file}
+
+  \item{dest}{the path to the destination directory. If
+  \code{NULL}, then it is unzipped in the current working
+  directory}
+
+  \item{verbose}{logical: noisy?}
+}
+\value{
+  a character vector of paths to the files that were
+  unzipped.
+}
+\description{
+  Unzip a zip archive file Unzip a zip archive file,
+  crossplatform - ie on mac, windows and linux If
+  \code{zip.filename} is a URL, it is first downlaoded to
+  \code{dest} On MacOS, this function removes the hidden ._
+  files, and __MACOSX folder which get created by the
+  Finder>Create Archive program on some Mac platforms. As
+  with all zip files, if the zipped files are not within a
+  subdirectory, they will all be extracted to
+  \code{destdir}, so you may want to ensure that the
+  \code{destdir} is clean and empty
+}
+\examples{
+\dontrun{
+# f <- "http://mirror.aarnet.edu.au/pub/CRAN/bin/windows/contrib/r-release/sos_1.3-1.zip"
+f <- "http://cran.r-project.org/bin/windows/contrib/r-release/sos_1.3-1.zip"
+# cran.mirror <- getOption("repos", default="http://cran.r-project.org")
+# f <- paste(cran.mirror, "bin/windows/contrib/r-release/sos_1.3-1.zip", sep="/")
+files <- crossplatform.unzip(f, "/tmp")
+files
+}
+}
+\author{
+  Mark Cowley, 2010-01-08
+}
+

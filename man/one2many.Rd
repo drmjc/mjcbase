@@ -1,0 +1,164 @@
+\name{n2o}
+\alias{list2env}
+\alias{list2map}
+\alias{map2env}
+\alias{map2list}
+\alias{map2o}
+\alias{n2o}
+\alias{o2n}
+\alias{o2nu}
+\title{convert one2many and many2one}
+\usage{
+  n2o(x, sep = " /// ")
+
+  o2n(x, sep = " /// ")
+
+  o2nu(x, sep = " /// ")
+
+  map2o(map, idx1 = 1, idx2 = 2, make.unique = TRUE,
+    sort.method = sort)
+
+  map2list(map, idx1 = 1, idx2 = 2, make.unique = TRUE,
+    sort.method = sort)
+
+  map2env(map, idx1 = 1, idx2 = 2, make.unique = TRUE,
+    sort.method = sort)
+
+  list2env(x, envir = NULL)
+
+  list2map(x)
+}
+\arguments{
+  \item{x}{a list of elements, each element being a vector
+  with >=1 value}
+
+  \item{sep}{the field seperator}
+
+  \item{map}{a matrix-like object with >= 2 columns}
+
+  \item{idx1}{which column contains the "keys"}
+
+  \item{idx2}{which column contains the "values"}
+
+  \item{make.unique}{logical: if there are duplicate values
+  for one key, keep the duplicates, or remove them
+  entirely?}
+
+  \item{sort.method}{howto sort the keys. the default is
+  the "sort" function.}
+
+  \item{envir}{an environment, or \code{NULL}}
+}
+\value{
+  \code{n2o}: a character vector of values, where elements
+  that had >1 value are separated by sQuote{sep}
+
+  \code{o2nu}: a list of vectors, where each vector has
+  just one value
+
+  \code{map2o}: a 2 column \code{data.frame} with the keys
+  in the first column and the values as n2o in the 2nd
+  column. (ie separated by " /// ").
+
+  \code{map2list}: A named \code{list} of keys to values
+
+  \code{map2env}: An environment
+
+  \code{list2env}: a hashed environment
+
+  \code{list2map}: a 2 column \code{data.frame}, with these
+  elements: \item{keys}{search key} \item{value}{mapped
+  value}
+}
+\description{
+  convert back and forth between one 2 many data, ie one
+  key vs multiple values
+}
+\details{
+  \code{n2o}: convert many-to-one ie convert a list of
+  vectors into a char vector, with elements in each input
+  vector separated by sep. Useful for displaying
+  one-to-many data in a single column of a table.
+
+  \code{o2n}: convert one-to-many ie convert a char vector
+  of entries separated by sep into a list of vectors.
+  Useful for displaying one-to-many data in a single column
+  of a table.
+
+  \code{o2nu}: convert one-to-many ie convert a char vector
+  of entries separated by sep into a list of vectors, and
+  make elements unique. Useful for displaying one-to-many
+  data in a single column of a table.
+
+  \code{map2o}: convert two columns into a o2n object.
+
+  \code{map2list}: Convert 2 columns in a n:n map into a
+  1:n list, such that each unique element in map[,idx1] is
+  a list element, and all of the things that are in the
+  idx2'th column.
+
+  \code{map2env}: convert a map to an environment. This is
+  more memory efficient than running \code{\link{map2list}}
+  then \code{\link{list2env}}. Convert 2 columns in a n:n
+  map into a 1:n list, such that each unique element in
+  map[,idx1] is a list element, and all of the things that
+  are in the idx2'th column.
+
+  \code{list2env}: convert a named \code{list} of keys to
+  values into a hashed environment
+
+  \code{list2map}: Convert a list, where element names =
+  key, and element vectors are the values into a 2 column
+  map.
+}
+\section{TODO}{
+  make it quicker if the map is sorted by the keys.
+}
+\examples{
+# n2o
+x <- list(104009, c(71772, 231691))
+n2o(x)
+# [1] "104009", "71772 /// 231691"
+# o2n
+y <- c("104009", "71772 /// 231691")
+o2n(y)
+# [[1]]
+# [1] "104009"
+# [[2]]
+# [1] "71772" "231691"
+y <- c("104009", "71772 /// 71772")
+o2n(y)
+# [[1]]
+# [1] "104009"
+# [[2]]
+# [1] "71772" "231691"
+o2nu(y)
+# [[1]]
+# [1] "104009"
+# [[2]]
+# [1] "71772"
+# map2o
+map <- cbind( c("a", "a", "a", "b", "c"),
+              c("1", "2", "2", "1", "4"))
+
+map2o(map, 1, 2, TRUE)
+# "a", "1 /// 2"
+# "b", "1"
+# "c", "4"
+map2o(map, 1, 2, FALSE)
+# "a", "1 /// 2 /// 2"
+# "b", "1"
+# "c", "4"
+map2o(map, 1, 2, TRUE, rev)
+# "a" , "2 /// 1"
+# "b" , "1"
+# "c" , "4"
+map2o(map, 1, 2, FALSE, rev)
+# "a", "2 /// 2 /// 1"
+# "b", "1"
+# "c", "4"
+}
+\author{
+  Mark Cowley, 15 March 2007
+}
+

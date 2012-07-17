@@ -1,0 +1,41 @@
+\name{percentile}
+\alias{percentile}
+\alias{quartile}
+\title{percentile & quartile}
+\usage{
+  percentile(x, probs = seq(0, 1, 0.1), ...)
+
+  quartile(x, ...)
+}
+\arguments{
+  \item{x}{a numeric vector}
+
+  \item{probs}{a vector or probabilities}
+
+  \item{\dots}{further arguments passed to
+  \code{\link{quantile}}}
+}
+\value{
+  \code{percentile}: a named vector of length 11, names =
+  the percentiles
+
+  \code{quartile}: a named vector of length 6, names = the
+  quartiles, \dQuote{mean}
+}
+\description{
+  Calculate the 11 pecentiles for the vector \code{x}, or
+  the 0th, 25th, 50th, 75th, 100th and mean value for the
+  vector \code{x}
+
+  Calculate the 0th, 25th, 50th, 75th, 100th and mean value
+  for the vector x
+}
+\examples{
+x <- rnorm(25,0,1)
+percentile(x)
+quartile(x)
+}
+\author{
+  Mark Cowley, 21 June 2005
+}
+
