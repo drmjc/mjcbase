@@ -5,7 +5,8 @@ Title: General helper functions for dealing with R objects/data types
 Author: Mark Cowley <m.cowley@garvan.org.au>
 Maintainer: Mark Cowley <m.cowley@garvan.org.au>
 Depends:
-    R (>= 2.12.0)
+    R (>= 2.12.0),
+    excelIO
 Suggests:
     testthat
 Description: A library of generic helper functions for making life easier in R
@@ -57,7 +58,7 @@ Collate:
     'move.column.R'
     'odd.R'
     'squashWarnings.R'
-    'str.left.R'
+    'str_left.R'
     'strip.fileextension.R'
     'vector2hashtable.R'
     'write.delim.list.R'
@@ -98,5 +99,14 @@ Collate:
     'lookUp.R'
     'threshold.distance.matrix.R'
     'print.venn.R'
+    'crossplatform.unzip.R'
+    'duplicate.indices.R'
+    'is.int.R'
+    'one2many.R'
+    'scan.text.R'
+    'sunique.R'
+    'vecmerge.R'
+    'percentile.R'
 Imports:
+    excelIO,
     stats
