@@ -15,7 +15,7 @@ vector2hashtable <- function(x, warn=TRUE) {
 		if( warn ) {
 			warning("Some values were too long to be hashtable keys. They've been shortened to 255 characters")
 		}
-		x[nchar(x)>255] <- str.left(x[nchar(x)>255],255)
+		x[nchar(x)>255] <- str_left(x[nchar(x)>255],255)
 	}
 	o <- order(x)
 	x <- x[o]

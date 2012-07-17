@@ -36,5 +36,5 @@ file.gunzip <- function(from, to=NULL) {
 #' @author Mark Cowley, 2009-01-13
 #' @export
 file.isgzip <- function(f) {
-	str.right(f, 2) %in% c("gz", "Gz", "GZ")
+	str_right(f, 2) %in% c("gz", "Gz", "GZ")
 }
