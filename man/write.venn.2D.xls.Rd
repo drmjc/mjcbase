@@ -1,10 +1,6 @@
 \name{write.venn.2D.xls}
 \alias{write.venn.2D.xls}
-\title{Write a 2D Venn diagram to an Excel file.
-Compare 2 vectors, and export an XLS file listing 4 comparisons: union,
-intersection, only in x, or y
-Optionally, the 2 input vectors can be
-exported via the \code{exportXY=TRUE} parameter.}
+\title{Write a 2D Venn diagram to an Excel file}
 \usage{
   write.venn.2D.xls(x, y, file, names = c("A", "B"),
     sortfun = sort, exportXY = FALSE)
@@ -30,10 +26,9 @@ exported via the \code{exportXY=TRUE} parameter.}
   \dQuote{intersect}, \dQuote{union}
 }
 \description{
-  Write a 2D Venn diagram to an Excel file. Compare 2
-  vectors, and export an XLS file listing 4 comparisons:
-  union, intersection, only in x, or y Optionally, the 2
-  input vectors can be exported via the
+  Compare 2 vectors, and export an XLS file listing 4
+  comparisons: union, intersection, only in x, or y
+  Optionally, the 2 input vectors can be exported via the
   \code{exportXY=TRUE} parameter.
 }
 \examples{
