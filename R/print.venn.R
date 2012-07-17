@@ -33,7 +33,8 @@ print.venn <- function(x, y) {
 }
 
 
-#' Write a 2D Venn diagram to an Excel file.
+#' Write a 2D Venn diagram to an Excel file
+#' 
 #' Compare 2 vectors, and export an XLS file listing 4 comparisons: union,
 #' intersection, only in x, or y
 #' Optionally, the 2 input vectors can be
@@ -52,6 +53,7 @@ print.venn <- function(x, y) {
 #' write.venn.2D.xls(LETTERS[1:10], LETTERS[7:15], f)
 #' @author Mark Cowley, 2009-02-02
 #' @export
+#' @importFrom excelIO write.xls
 write.venn.2D.xls <- function(x, y, file, names=c("A", "B"), sortfun=sort, exportXY=FALSE) {
 	length(names) == 2 || stop("names must have length=2")
 	
@@ -83,7 +85,6 @@ write.venn.2D.xls <- function(x, y, file, names=c("A", "B"), sortfun=sort, expor
 # 2011-09-01:
 # - added exportXY parameter
 # - bug fix where union did not include those in the intersection
-
 
 #' Write a 3D Venn diagram to an Excel file.
 #' Compare 3 vectors, and export an XLS file listing 9 comparisons:\cr
