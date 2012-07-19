@@ -1,0 +1,66 @@
+\docType{methods}
+\name{stratify}
+\alias{stratify}
+\alias{stratify,ANY,missing,missing-method}
+\alias{stratify,data.frame,missing,numeric-method}
+\alias{stratify,data.frame,numeric,missing-method}
+\alias{stratify,data.frame,numeric,numeric-method}
+\alias{stratify,list,missing,numeric-method}
+\alias{stratify,list,numeric,ANY-method}
+\alias{stratify,matrix,missing,numeric-method}
+\alias{stratify,matrix,numeric,missing-method}
+\alias{stratify,matrix,numeric,numeric-method}
+\alias{stratify,numeric,missing,numeric-method}
+\alias{stratify,numeric,numeric,missing-method}
+\alias{stratify,numeric,numeric,numeric-method}
+\title{stratify}
+\arguments{
+  \item{x}{a numeric \code{vector}, \code{matrix},
+  \code{data.frame} or \code{list}}
+
+  \item{percentile}{numeric: The percentile at which to cut
+  the data, in the range (0,1). Eg 75th percentile = 0.75
+  If \code{x} is 2D, then you can specify 1 percentile for
+  all rows, or 1 percentile per row in \code{x}.}
+
+  \item{threshold}{numeric: The numeric threshold at which
+  to cut the data. This should not be \code{NULL}, or
+  \code{NA}, and if specified, should be within the range
+  of (min(x), max(x)). If \code{x} is 2D, then you can
+  specify 1 threshold for all rows, or 1 threshold per row
+  in \code{x}. \code{percentile} overrides \code{threshold}
+  if both are specified.}
+}
+\value{
+  a numeric \code{vector}, \code{matrix}, \code{data.frame}
+  or \code{list} of 0/1 values, where 0 means below the
+  cutpoint, and 1 means >= the cutpoint.
+}
+\description{
+  stratify x into 0,1, based on a percentile or a threshold
+}
+\details{
+  This was designed to convert continuous data (eg gene
+  expression levels) and discretize into low/high as 0/1,
+  respectively. These data can be a simple vector, or 2D
+  \code{matrix} or \code{data.frame}, or a \code{list}
+  where each element is a \code{numeric(1)}. You can
+  stratify that data using either a \code{percentile}, eg
+  0.25 or 0.5 for the 25th and 50th percentile; or a
+  threshold, eg 6.5.
+
+  If your data is 1D, then you should supply either a
+  single percentile or threshold. If you have 2D data, then
+  you can provide a single percentile or threshold, or 1
+  percentile or threshold for each row in x. these values
+  are recycled if necessary to match \code{nrow(x)}.
+
+  If you supply both \code{percentile} and
+  \code{threshold}, then the \code{percentile} will be
+  used. If you supply neither, then \code{percentile=0.5}
+  is used.
+}
+\author{
+  Mark Cowley, 2011-09-01
+}
+

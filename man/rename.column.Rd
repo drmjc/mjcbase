@@ -1,0 +1,25 @@
+\name{rename.column}
+\alias{rename.column}
+\title{Rename column(s) within a table.}
+\usage{
+  rename.column(x, old.name, new.name)
+}
+\arguments{
+  \item{x}{a matrix-like object}
+
+  \item{old.name}{a vector of column names. Can be longer
+  than one.}
+
+  \item{new.name}{a vector of replacement names. must be
+  the same length as \code{old.name}}
+}
+\value{
+  the same x, but with column(s) renamed
+}
+\description{
+  Rename column(s) within a table.
+}
+\author{
+  Mark Cowley, 2009-06-15
+}
+

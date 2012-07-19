@@ -1,0 +1,30 @@
+\name{pkgrep}
+\alias{pkgrep}
+\title{find matching package names using grep}
+\usage{
+  pkgrep(pattern, ...)
+}
+\arguments{
+  \item{pattern}{a search pattern}
+
+  \item{\dots}{arguments passed to \code{\link{grep}}}
+}
+\value{
+  a character vector of matching packages
+}
+\description{
+  There's some R packages that I just can't for the life of
+  me remember the correct caPitAlisaTion. This function
+  searches the list of currently installed packages for
+  ones matching your pattern, and returns the names of
+  matching packages. 'pkgrep' is short for 'package grep'
+}
+\examples{
+pkgrep("lumi")
+# [1] "illuminaHumanv4.db" "lumi"               "lumidat"
+# [4] "methylumi"
+}
+\author{
+  Mark Cowley, 2012-03-27
+}
+

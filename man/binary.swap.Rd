@@ -1,0 +1,28 @@
+\name{binary.swap}
+\alias{binary.swap}
+\title{swap the 1's and 0's around}
+\usage{
+  binary.swap(x)
+}
+\arguments{
+  \item{x}{a numeric vector of 0/1}
+}
+\value{
+  a numeric vector like the input, but with 1's and 0's
+  swapped.
+}
+\description{
+  swap the 1's and 0's around
+}
+\examples{
+input <- c(0,1,0,1)
+binary.swap(input)
+\dontrun{
+binary.swap(c(input, NA))
+# Error in binary.swap(c(input, NA)) : x must be 0's and 1's
+}
+}
+\author{
+  Mark Cowley, 2011-09-02
+}
+

@@ -1,0 +1,26 @@
+\name{peek}
+\alias{peek}
+\title{A function to show first 5 rows and col of data}
+\usage{
+  peek(table, x = 5, y = 5)
+}
+\arguments{
+  \item{table}{a \code{matrix} or \code{data.frame}}
+
+  \item{x}{the number of rows to show}
+
+  \item{y}{the number of columns to show}
+}
+\value{
+  none. prints the specified parts of the table
+}
+\description{
+  A function to show first 5 rows and col of data
+}
+\author{
+  Mark Cowley
+}
+\seealso{
+  \code{\link{head}} \code{\link{tail}}
+}
+

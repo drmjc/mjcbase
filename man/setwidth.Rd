@@ -1,0 +1,22 @@
+\name{setwidth}
+\alias{setwidth}
+\title{set the width of the current display
+set the width of the current display to the number of columns in the current
+terminal session}
+\usage{
+  setwidth(width = NULL)
+}
+\arguments{
+  \item{width}{integer: the number of columns to set the
+  width to. if \code{NULL}, then this is determined via
+  \code{Sys.getenv("COLUMNS")}}
+}
+\description{
+  set the width of the current display set the width of the
+  current display to the number of columns in the current
+  terminal session
+}
+\author{
+  Mark Cowley, 21 Feb 2007
+}
+

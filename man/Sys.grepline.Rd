@@ -1,0 +1,25 @@
+\name{Sys.grepline}
+\alias{Sys.grepline}
+\title{Which lines do various patterns exist on?}
+\usage{
+  Sys.grepline(pattern, file, first = FALSE)
+}
+\arguments{
+  \item{pattern}{a grep pattern. no spaces allowed!}
+
+  \item{file}{the file to search within}
+
+  \item{first}{logical: if \code{TRUE}, then only return
+  the first match; if \code{FALSE}, return all matches}
+}
+\value{
+  a vector of indices. if pattern is not found, 0 is
+  returned.
+}
+\description{
+  Which lines do various patterns exist on?
+}
+\author{
+  Mark Cowley, 2011-08-04
+}
+
