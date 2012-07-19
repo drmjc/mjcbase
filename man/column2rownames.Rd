@@ -1,15 +1,21 @@
 \name{column2rownames}
+\alias{col2rownames}
 \alias{colnames2row}
 \alias{column2rownames}
 \alias{row2colnames}
 \alias{rownames2col}
+\alias{rownames2column}
 \title{move columns/rows to col/rownames & back again}
 \usage{
   column2rownames(x, column = 1, sep = ".")
 
+  col2rownames(x, column = 1, sep = ".")
+
   row2colnames(x, row = 1, sep = ".")
 
   rownames2col(x, column = 1, colname = "")
+
+  rownames2column(x, column = 1, colname = "")
 
   colnames2row(x, row = 1, rowname)
 }
@@ -37,16 +43,16 @@
   gets set if there was a rowname to begin with.}
 }
 \value{
-  \code{column2rownames}: \code{x} with 1 less column and
-  with \code{rownames} set
+  \code{column2rownames, col2rownames}: \code{x} with 1
+  less column and with \code{rownames} set
 
   \code{row2colnames}: \code{x} with 1 less row and with
   \code{colnames} set
 
-  \code{rownames2col}: a \code{data.frame} with
-  \code{ncol(x) + 1} and the rownames in the extra column.
-  The colclasses will be the same as they were in \code{x},
-  and the rownames will have the class of
+  \code{rownames2col,rownames2column}: a \code{data.frame}
+  with \code{ncol(x) + 1} and the rownames in the extra
+  column.  The colclasses will be the same as they were in
+  \code{x}, and the rownames will have the class of
   \dQuote{character}.
 
   \code{colnames2row}: a \code{data.frame} with
@@ -56,13 +62,15 @@
   \dQuote{character}.
 }
 \description{
-  \code{column2rownames}: Move a column of \code{x} to the
-  \code{rownames} and remove it from \code{x}
+  \code{column2rownames, col2rownames}: Move a column of
+  \code{x} to the \code{rownames} and remove it from
+  \code{x}
 
   \code{row2colnames}: Move a row of x to the colnames and
   remove it from x
 
-  \code{rownames2col}: Move the rownames of x into a column
+  \code{rownames2col,rownames2column}: Move the rownames of
+  x into a column
 
   \code{colnames2row}: Move the colnames of x into a row.
 }

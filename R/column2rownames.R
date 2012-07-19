@@ -1,6 +1,6 @@
 #' move columns/rows to col/rownames & back again
 #' 
-#' @description \code{column2rownames}: Move a column of \code{x} to the \code{rownames} and remove it from \code{x}
+#' @description \code{column2rownames, col2rownames}: Move a column of \code{x} to the \code{rownames} and remove it from \code{x}
 #' 
 #' @param x a \code{data.frame}
 #' @param column the column index that the newly moved rownames will have - (ie
@@ -9,7 +9,7 @@
 #'   column, respectively.
 #' @param sep the value to use to make the rownames unique (if necessary)
 #' 
-#' @return \code{column2rownames}: \code{x} with 1 less column and with \code{rownames} set
+#' @return \code{column2rownames, col2rownames}: \code{x} with 1 less column and with \code{rownames} set
 #' 
 #' @author Mark Cowley, 31 May 2006
 #' @export
@@ -20,6 +20,10 @@ column2rownames <- function(x, column=1, sep=".") {
 
     return( x )
 }
+
+#' @export
+#' @rdname column2rownames
+col2rownames <- column2rownames
 
 #' @description \code{row2colnames}: Move a row of x to the colnames and remove it from x
 #' 
@@ -40,12 +44,12 @@ row2colnames <- function(x, row=1, sep=".") {
 }
 
 
-#' @description \code{rownames2col}: Move the rownames of x into a column
+#' @description \code{rownames2col,rownames2column}: Move the rownames of x into a column
 #' 
 #' @param colname what name should the new column have? only gets set if there
 #'   was a colname to begin with.
 #' 
-#' @return \code{rownames2col}: a \code{data.frame} with \code{ncol(x) + 1} and the rownames in the extra column.
+#' @return \code{rownames2col,rownames2column}: a \code{data.frame} with \code{ncol(x) + 1} and the rownames in the extra column.
 #'   The colclasses will be the same as they were in \code{x}, and the rownames will
 #'   have the class of \dQuote{character}.
 #' 
@@ -80,6 +84,9 @@ rownames2col <- function(x, column=1, colname="") {
 # CHANGELOG
 # 2011-11-01: bug fix in return(x) -> return(res)
 
+#' @export
+#' @rdname column2rownames
+rownames2column <- rownames2col
 
 #' @description \code{colnames2row}: Move the colnames of x into a row.
 #' 
