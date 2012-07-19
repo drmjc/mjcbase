@@ -1,7 +1,6 @@
 \name{perl.oneliner}
 \alias{perl.oneliner}
-\title{Function to wrap up a perl command such as 's|^.+\\t||' and execute it on the
-cmdline.}
+\title{execute a perl one liner}
 \usage{
   perl.oneliner(cmds, files, intern = FALSE, debug = FALSE)
 }
@@ -17,11 +16,25 @@ cmdline.}
   \item{debug}{logical: if \code{TRUE}, print the oneliner
   command before executing it}
 }
+\value{
+  nothing
+}
 \description{
+  execute a perl one liner, such as a regex search &
+  replace (which is how i most often use this), eg
+  \code{s|^.+\\t||} and execute it on the cmdline.
+}
+\details{
   you can pass in multiple commands (such as multiple regex
-  strings) applied to one or multiple files. i've tested
-  the usage of multiple regex commands applied to a single
-  file.
+  search/replace strings) applied to one or multiple files.
+  i've tested the usage of multiple regex commands applied
+  to a single file.
+
+  commands The commands vector can either contain the
+  leading perl command, eg \code{perl.oneliner("perl -pi -e
+  's|<DTG|\n <DTG|g'", file)}\cr or just a pattern, eg\cr
+  \code{perl.oneliner("'s|<DTG|\n <DTG|g'", file)}\cr in
+  which case we will add the leading \code{perl -pi -e }
 }
 \author{
   Mark Cowley
