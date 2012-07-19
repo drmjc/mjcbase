@@ -1,4 +1,9 @@
-
+#' number of lines in a txt file
+#' @param filename path to a text file
+#' @return numeric(1)
+#' @author Mark Cowley
+#' @export
+#' @rdname file.numlines
 file.numlines <- function(filename) {
 	nlines <- NA
 	try( {
@@ -16,6 +21,6 @@ file.numlines <- function(filename) {
     return(nlines)
 }
 
-numlines <- function(filename) {
-    return(file.numlines(filename))
-}
+#' @export
+#' @rdname file.numlines
+numlines <- file.numlines
