@@ -16,6 +16,10 @@
 \description{
   sort and uniquify a vector
 }
+\examples{
+sunique(c("b", "z", "a", "z", NA))
+# [1] "a" "b" "z"
+}
 \author{
   Mark Cowley, 23/3/07
 }
