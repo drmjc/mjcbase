@@ -1,0 +1,25 @@
+\name{sourcedir}
+\alias{sourcedir}
+\title{source all the .R files in a directory}
+\usage{
+  sourcedir(dir, pattern = "\\.[rR]")
+}
+\arguments{
+  \item{dir}{the path to a directory containing .R files}
+
+  \item{pattern}{a regular expression.  Only file names
+  which match the regular expression will be returned. The
+  default matches all files ending in \sQuote{.r} or
+  \sQuote{.R}}
+}
+\value{
+  nothing. the side effect is that the source code is
+  imported.
+}
+\description{
+  source all the .R files in a directory
+}
+\author{
+  Mark Cowley, 2012-03-07
+}
+
