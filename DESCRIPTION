@@ -1,6 +1,6 @@
 Package: mjcbase
-Version: 1.0.4
-Date: 2012-07-19
+Version: 1.0.5
+Date: 2012-07-24
 Title: General helper functions for dealing with R objects/data types
 Author: Mark Cowley <m.cowley@garvan.org.au>
 Maintainer: Mark Cowley <m.cowley@garvan.org.au>
@@ -123,5 +123,6 @@ Collate:
     'mjcbase-package.R'
     'pbpaste.R'
     'sort-methods.R'
+    'collapse.rows.R'
 Imports:
     excelIO
