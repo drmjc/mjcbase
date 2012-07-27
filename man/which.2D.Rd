@@ -35,8 +35,8 @@
   \code{which.min.2D}: a vector of length 2 indicating the
   x and y indices respectively
 
-  a \code{matrix} with 2 columns, col 1 for the rows and
-  col 2 for the cols
+  \code{which.minN.2D}: a \code{matrix} with 2 columns, col
+  1 for the rows and col 2 for the cols
 
   \code{which.max.2D}: a vector of length 2 indicating the
   x and y indices respectively
