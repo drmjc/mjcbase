@@ -1,6 +1,6 @@
 Package: mjcbase
-Version: 1.0.5
-Date: 2012-07-24
+Version: 1.0.6
+Date: 2012-07-27
 Title: General helper functions for dealing with R objects/data types
 Author: Mark Cowley <m.cowley@garvan.org.au>
 Maintainer: Mark Cowley <m.cowley@garvan.org.au>
@@ -8,7 +8,8 @@ Depends:
     R (>= 2.12.0),
     excelIO
 Suggests:
-    testthat
+    testthat,
+    datasets
 Description: A library of generic helper functions for making life easier in R
 URL: http://www.garvan.unsw.edu.au/bioinformatics/
 Type: Package
@@ -124,5 +125,6 @@ Collate:
     'pbpaste.R'
     'sort-methods.R'
     'collapse.rows.R'
+    'sourcedir.R'
 Imports:
     excelIO
