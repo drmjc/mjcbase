@@ -39,10 +39,14 @@ col2rownames <- column2rownames
 row2colnames <- function(x, row=1, sep=".") {
     colnames(x) <- make.unique( as.character(unlist(x[row, ])), sep="." )
     x <- x[-row, ]
+	if( row == 1 && identical(rownames(x), as.character(2:(nrow(x)+1))) ) {
+		rownames(x) <- 1:nrow(x)
+	}
 
     return( x )
 }
-
+# CHANGELOG:
+# 2012-07-27: fix the rownames if they were just 1:n and became 2:n after losing the first row
 
 #' @description \code{rownames2col,rownames2column}: Move the rownames of x into a column
 #' 
