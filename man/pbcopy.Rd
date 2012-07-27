@@ -3,13 +3,25 @@
 \alias{pbcopy}
 \title{Write a vector to the OSX clipboard}
 \usage{
-  pbcopy(x)
+  pbcopy(x, row.names = FALSE, col.names = TRUE)
 
   copy.to.clipboard(x)
 }
 \arguments{
   \item{x}{an object to be writen to the clipboard. see
   Details.}
+
+  \item{row.names}{if \code{x} is a \code{matrix} or
+  \code{data.frame}, then either \code{TRUE}, \code{FALSE},
+  \code{NULL} \code{NA}, or a \code{character(1)}.  see
+  \code{\link{write.delim}}. If \code{x} is a \code{list},
+  then write out the list names in each row? see
+  \code{\link{names}} arg in \code{\link{writeLines.list}}.
+  Otherwise it's ignored.}
+
+  \item{col.names}{if \code{x} is a \code{matrix} or
+  \code{data.frame}, then write out the col.names?
+  \code{default=TRUE} Otherwise, it's ignored.}
 }
 \value{
   nothing
