@@ -4,7 +4,7 @@
 \title{Paste the OSX clipboard into a character vector}
 \usage{
   pbpaste(class = "character", sep = "\t", ok = TRUE,
-    warn = TRUE)
+    warn = TRUE, header = TRUE)
 
   paste.from.clipboard(class = "character", sep = "\t")
 }
@@ -18,9 +18,13 @@
 
   \item{warn}{logical: warn if the clipboard is missing a
   final EOL}
+
+  \item{header:}{logical: if \code{class="data.frame"} or
+  \code{class="matrix"}, then is the first line a header
+  line?}
 }
 \value{
-  a character vector of lines
+  a data object from the clipboard, of type \code{class}.
 }
 \description{
   Enhanced control over object type\cr The default is to
@@ -69,6 +73,27 @@
 # (great for copying objects between R sessions)
 dput(letters, pipe("pbpaste", "w"))
 dget(pipe("pbcopy"))
+
+# data.frame
+if( require(datasets) ) {
+  pbcopy(iris, col.names=TRUE)
+  head(pbpaste("data.frame", header=T))
+  #   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+  # 2          5.1         3.5          1.4         0.2  setosa
+  # 3          4.9           3          1.4         0.2  setosa
+  # 4          4.7         3.2          1.3         0.2  setosa
+  # 5          4.6         3.1          1.5         0.2  setosa
+  # 6            5         3.6          1.4         0.2  setosa
+  # 7          5.4         3.9          1.7         0.4  setosa
+  head(pbpaste("data.frame", header=F))
+  #             V1          V2           V3          V4      V5
+  # 1 Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+  # 2          5.1         3.5          1.4         0.2  setosa
+  # 3          4.9           3          1.4         0.2  setosa
+  # 4          4.7         3.2          1.3         0.2  setosa
+  # 5          4.6         3.1          1.5         0.2  setosa
+  # 6            5         3.6          1.4         0.2  setosa
+}
 
 }
 }
