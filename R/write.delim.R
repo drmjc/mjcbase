@@ -1,4 +1,5 @@
 #' Write a matrix-like object as a tab-delimited txt file.
+#' 
 #' This method writes tab delimited files and offers enhanced control over the
 #' writing of a row.names column.
 #' 

@@ -1,8 +1,6 @@
 \name{write.delim}
 \alias{write.delim}
-\title{Write a matrix-like object as a tab-delimited txt file.
-This method writes tab delimited files and offers enhanced control over the
-writing of a row.names column.}
+\title{Write a matrix-like object as a tab-delimited txt file.}
 \usage{
   write.delim(x, file, na = "---", row.names = FALSE,
     col.names = TRUE, append = FALSE, ...)
@@ -34,6 +32,10 @@ writing of a row.names column.}
   a tab-delimited txt file is written out.
 }
 \description{
+  This method writes tab delimited files and offers
+  enhanced control over the writing of a row.names column.
+}
+\details{
   Writing row names.\cr Allowable values for
   \code{row.names} are: \tabular{ll}{ \code{TRUE} \tab row
   names are written with a blank column header \cr
@@ -46,8 +48,7 @@ writing of a row.names column.}
   then no row and/or column names \cr will be written, no
   matter what the settings for \code{row.names} or
   \code{col.names} are.\cr
-}
-\details{
+
   If you use the default options, then it works nicely with
   \code{\link{read.delim}}.
 }
