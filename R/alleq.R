@@ -10,10 +10,15 @@
 #' alleq(letters)
 #' # [1] FALSE
 #' 
-alleq <- function(x) {
-    if(length(x) == 1)
-        TRUE
-    else
-        all(x[2:length(x)] == x[1])
+alleq <- function(x, na.rm=FALSE) {
+	if (na.rm)
+		x <- setdiff(x, NA)
+	if (length(x) == 0)
+		FALSE
+	else if (length(x) == 1)
+		TRUE
+	else
+		all(x[2:length(x)] == x[1])
 }
-
+# CHANGELOG
+# 2012-08-28: added na.rm parameter

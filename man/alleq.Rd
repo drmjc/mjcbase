@@ -2,7 +2,7 @@
 \alias{alleq}
 \title{Are all values equal?}
 \usage{
-  alleq(x)
+  alleq(x, na.rm = FALSE)
 }
 \arguments{
   \item{x}{a vector}
