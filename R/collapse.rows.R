@@ -110,12 +110,18 @@ collapse.rows <- function(x, key.column=1, cols2collapse=NULL, sep=" // ", max.n
 			else {
 				for(append.column in cols2collapse) {
 					tmp <- x[rows, append.column]
-					if( alleq(tmp) )
-						tmp <- tmp[1]
+					if( alleq(tmp, na.rm=TRUE) )
+						tmp <- tmp[!is.na(tmp)][1]
+					else if (all(is.na(tmp)))
+						tmp <- NA
+					else if (any(is.na(tmp))) {
+						tmp[is.na(tmp)] <- ""
+						tmp <- paste(tmp, collapse=sep)
+					}
 					else
 						tmp <- paste(tmp, collapse=sep)
 					if( !is.null(max.nchar) && nchar(tmp) > max.nchar )
-						tmp <- paste(strleft(tmp, max.nchar-3), "...", sep="")
+						tmp <- paste(str_left(tmp, max.nchar-3), "...", sep="")
 					res[i, append.column] <- tmp
 				}
 			}
@@ -130,6 +136,8 @@ collapse.rows <- function(x, key.column=1, cols2collapse=NULL, sep=" // ", max.n
 # 2012-07-24
 # - bug fix: redundant values to collapse was not being checked properly
 # - added max.nchar option to truncate long lines.
+# 2012-08-15: bug fix in strleft -> str_left
+# 2012-08-28: alleq(..., na.rm=TRUE)
 
 #' @export
 #' @rdname collapse.rows
