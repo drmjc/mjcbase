@@ -35,7 +35,7 @@
 zipdir <- function(dir, zip.file, exclude.patterns=NULL, verbose=FALSE) {
 	!missing(dir) && !is.null(dir) && (length(dir)==1) && file.exists(dir) && is.dir(dir) || stop("dir must be a single directory")
 	!missing(zip.file) && !is.null(zip.file) && (length(zip.file)==1) && file.exists(dirname(zip.file)) || stop("zip.file must be a valid path to a zip file")
-	zip.file <- normalizePath(zip.file)
+	zip.file <- get.full.path(zip.file)
 	
 	path.to.zip <- getOption("zip")
 	if(is.null(path.to.zip)) {
@@ -62,3 +62,4 @@ zipdir <- function(dir, zip.file, exclude.patterns=NULL, verbose=FALSE) {
 # CHANGELOG
 # 2010-04-14: v1
 # 2011-04-28: robustified the code. check if zip can be found. verbose output. Rd made.
+# 2012-10-12: bug fix; force path expansion of the zip.file, rather than normalizePath which does nothing for an argument named 'simple.zip' where the ./ is implicit.
