@@ -1,11 +1,19 @@
 \name{tocsv}
 \alias{tocsv}
+\alias{toscsv}
 \title{Convert a vector x into a comma separated character(1).}
 \usage{
-  tocsv(x, sep = ", ")
+  tocsv(x, na.replace = NA, sep = ", ")
+
+  toscsv(x, na.replace = "")
 }
 \arguments{
   \item{x}{a vector}
+
+  \item{na.replace}{replace all \code{NA}'s with a value,
+  such as \dQuote{}. default=\code{NA}, ie don't replace
+  \code{NA}'s which results in a text string of
+  \dQuote{..., NA, ...}}
 
   \item{sep}{the character to join the values with}
 }
@@ -16,7 +24,8 @@
 \description{
   Useful for pasting a list of entries in to a batch search
   engine. You can change comma separator by changing the
-  value of\code{sep}.
+  value of \code{sep}. \code{toscsv} is read as
+  to-semicolon-separated-values.
 }
 \author{
   Mark Cowley, 15 May 2006
