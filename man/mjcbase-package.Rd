@@ -46,10 +46,8 @@
   data\cr
 
   \tabular{ll}{ Package: \tab mjcbase\cr Type: \tab
-  Package\cr Version: \tab
-  \Sexpr[stage=build]{packageDescription("mjcbase")$Version}\cr
-  Date: \tab \Sexpr[stage=build]{format(Sys.time(),
-  "\%Y-\%m-\%d")}\cr License: \tab GPL-2\cr LazyLoad: \tab
+  Package\cr Version: \tab 1.0.6\cr Date: \tab
+  2012-07-31\cr License: \tab GPL-2\cr LazyLoad: \tab
   yes\cr }
 }
 \author{
