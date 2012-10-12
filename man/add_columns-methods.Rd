@@ -1,0 +1,54 @@
+\name{add_columns}
+\alias{add_columns}
+\title{Add columns to a \code{data.frame} or \code{matrix}}
+\usage{
+  add_columns(x, columns)
+}
+\arguments{
+  \item{x}{a \code{data.frame}, \code{ExpressionSet}, more
+  to come?}
+
+  \item{columns}{a chracter vector of column names}
+}
+\value{
+  a \code{data.frame} or same class as \code{class(x)}
+}
+\description{
+  Alter the columns within a \code{data.frame} or
+  \code{matrix}, to \code{columns}. Note this can have a
+  side effect of reordering, adding new, and excluding
+  existing columns, such that the final result will the
+  same columns in the same order as specified by
+  \code{columns}.
+}
+\examples{
+if (require(datasets)) {
+# data.frame method:
+data(iris)
+add_columns(head(iris), c(colnames(iris), "newColumn"))
+#   Sepal.Length Sepal.Width Petal.Length Petal.Width Species newColumn
+# 1          5.1         3.5          1.4         0.2  setosa        NA
+# 2          4.9         3.0          1.4         0.2  setosa        NA
+# 3          4.7         3.2          1.3         0.2  setosa        NA
+# 4          4.6         3.1          1.5         0.2  setosa        NA
+# 5          5.0         3.6          1.4         0.2  setosa        NA
+# 6          5.4         3.9          1.7         0.4  setosa        NA
+
+# matrix method
+mat <- as.matrix(iris[1:5,1:4])
+add_columns(mat, c("Sepal.Length", "Sepal.Width", "newColumn", "Petal.Length"))
+#   Sepal.Length Sepal.Width newColumn Petal.Length
+# 1          5.1         3.5        NA          1.4
+# 2          4.9         3.0        NA          1.4
+# 3          4.7         3.2        NA          1.3
+# 4          4.6         3.1        NA          1.5
+# 5          5.0         3.6        NA          1.4
+}
+}
+\author{
+  Mark Cowley, 2012-09-04
+}
+\seealso{
+  \code{\link{merge_tsv}}
+}
+
