@@ -6,6 +6,8 @@
 }
 \arguments{
   \item{x}{a vector}
+
+  \item{na.rm}{logical: remove logicals?}
 }
 \value{
   logical: \code{TRUE} if all elements are the same

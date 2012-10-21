@@ -1,7 +1,10 @@
 #' Are all values equal?
 #'
 #' @param x a vector
+#' @param na.rm logical: remove logicals?
+#'
 #' @return logical: \code{TRUE} if all elements are the same
+#'
 #' @export
 #' @author Mark Cowley, 2011-07-18
 #' @examples
@@ -22,3 +25,4 @@ alleq <- function(x, na.rm=FALSE) {
 }
 # CHANGELOG
 # 2012-08-28: added na.rm parameter
+# 2012-10-21: documented na.rm parameter
