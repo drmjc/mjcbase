@@ -17,14 +17,36 @@
 }
 \description{
   This function has more capabilities than path.expand, in
-  that relative paths (. and ./ and ../) are also expanded.
+  that relative paths (. and ./ and ../ and implicit ./)
+  are also expanded, and more than normalizePath, in that
+  files with an implicit ./ are also expanded relative to
+  the current working dir, and files that don't currently
+  exist can also expanded (see examples).
 }
 \examples{
 \dontrun{
+path.expand("~")
+normalizePath("~")
 get.full.path("~", trailing.slash=FALSE)
 get.full.path("~", trailing.slash=TRUE)
+
+path.expand("./")
+normalizePath("./")
 get.full.path("./")
+
+path.expand("../")
+normalizePath("../")
 get.full.path("..")
+
+#
+# benefits over other approaches
+# - file doesn't have to exist already
+get.full.path("sgsdf.zip")
+# [1] "/Users/marcow/src/R/mjcbase/R/sgsdf.zip"
+path.expand("sgsdf.zip")
+# [1] "sgsdf.zip"
+normalizePath("sgsdf.zip")
+# [1] "sgsdf.zip"
 }
 }
 \author{
