@@ -1,5 +1,3 @@
-setGeneric("sort")
-
 #' sorting or ordering more complex objects
 #'
 #' @inheritParams base::sort
@@ -12,7 +10,8 @@ setGeneric("sort")
 #' @exportMethod sort
 #' @rdname sort-methods
 #' @docType methods
-#'
+setGeneric("sort", function(x, decreasing=FALSE, na.last=NA, FUN, ...) standardGeneric("sort"))
+
 #' @rdname sort-methods
 #' @aliases sort,matrix-method
 setMethod(
@@ -46,3 +45,12 @@ setMethod(
 	}
 )
 
+#' @rdname sort-methods
+#' @aliases sort,ANY-method
+setMethod(
+	"sort",
+	signature=signature("ANY"),
+	function(x, decreasing=FALSE, na.last=NA, FUN, ...) {
+		base::sort(x, decreasing=decreasing, ...)
+	}
+)

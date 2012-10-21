@@ -1,6 +1,7 @@
 \docType{methods}
 \name{sort}
 \alias{sort}
+\alias{sort,ANY-method}
 \alias{sort,data.frame-method}
 \alias{sort,matrix-method}
 \title{sorting or ordering more complex objects}
