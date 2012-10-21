@@ -19,7 +19,7 @@
   \item{warn}{logical: warn if the clipboard is missing a
   final EOL}
 
-  \item{header:}{logical: if \code{class="data.frame"} or
+  \item{header}{logical: if \code{class="data.frame"} or
   \code{class="matrix"}, then is the first line a header
   line?}
 }

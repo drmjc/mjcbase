@@ -21,7 +21,7 @@
 #' @param sep the separator to use if \code{class="matrix"}, or \code{class="data.frame"}
 #' @param ok logical: is it OK to be missing a final EOL?
 #' @param warn logical: warn if the clipboard is missing a final EOL
-#' @param header: logical: if \code{class="data.frame"} or \code{class="matrix"}, then is the first
+#' @param header logical: if \code{class="data.frame"} or \code{class="matrix"}, then is the first
 #'  line a header line?
 #' 
 #' @return a data object from the clipboard, of type \code{class}.
