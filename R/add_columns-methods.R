@@ -9,6 +9,8 @@
 #' @param columns a chracter vector of column names
 #' @return a \code{data.frame} or same class as \code{class(x)}
 #' @author Mark Cowley, 2012-09-04
+#'
+#' @export
 #' @S3method add_columns default
 #' @S3method add_columns data.frame
 #' @S3method add_columns matrix
