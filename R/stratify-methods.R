@@ -34,56 +34,59 @@
 #' 
 setGeneric(
 	"stratify",
-	function(x, percentile, threshold) {
+	function(x, percentile, threshold, as.factor) {
 		standardGeneric("stratify")
 	}
 )
 
 #' @rdname stratify-methods
-#' @aliases stratify,numeric,numeric,missing-method
+#' @aliases stratify,numeric,numeric,missing,logical-method
 setMethod(
 	"stratify",
-	signature=signature("numeric", "numeric", "missing"),
-	function(x, percentile, threshold) {
+	signature=signature("numeric", "numeric", "missing", "logical"),
+	function(x, percentile, threshold, as.factor=FALSE) {
 		percentile > 0 && percentile < 1 || stop("percentile must be in (0,1)")
 		threshold <- quantile(x, probs=percentile)
 		cat(sprintf("%.2f\n", threshold))
-		# cat(threshold,"\n")
-		res <- as.numeric( x >= threshold )
-		res
+		stratify(x, threshold=threshold, as.factor=as.factor)
 	}
 )
 
 #' @rdname stratify-methods
-#' @aliases stratify,numeric,missing,numeric-method
+#' @aliases stratify,numeric,missing,numeric,logical-method
 setMethod(
 	"stratify",
-	signature=signature("numeric", "missing", "numeric"),
-	function(x, percentile, threshold) {
+	signature=signature("numeric", "missing", "numeric", "logical"),
+	function(x, percentile, threshold, as.factor) {
 		threshold > min(x, na.rm=TRUE) && threshold < max(x, na.rm=TRUE) || stop("percentile must be in (min(x),max(x))")
 
 		res <- as.numeric( x >= threshold )
+		if( as.factor ) {
+			res <- factor(res, levels=c(0,1))
+			levels(res) <- c("low", "high")
+		}
 		res
 	}
 )
 
 #' @rdname stratify-methods
-#' @aliases stratify,numeric,numeric,numeric-method
+#' @aliases stratify,numeric,numeric,numeric,logical-method
 setMethod(
 	"stratify",
-	signature=signature("numeric", "numeric", "numeric"),
-	function(x, percentile, threshold) {
-		stratify(x, percentile)
+	signature=signature("numeric", "numeric", "numeric", "logical"),
+	function(x, percentile, threshold, as.factor) {
+		warning("you specified both percentile and threshold. ignoring threshold")
+		stratify(x, percentile, as.factor=as.factor)
 	}
 )
 
 
 #' @rdname stratify-methods
-#' @aliases stratify,matrix,numeric,missing-method
+#' @aliases stratify,matrix,numeric,missing,logical-method
 setMethod(
 	"stratify",
-	signature=signature("matrix", "numeric", "missing"),
-	function(x, percentile, threshold) {
+	signature=signature("matrix", "numeric", "missing", "logical"),
+	function(x, percentile, threshold, as.factor) {
 		# res <- apply(x, 1, quantile, probs=percentile)
 		# res
 		
@@ -91,132 +94,100 @@ setMethod(
 		
 		percentile <- recycle(percentile, nrow(x))
 		
-		res <- x
+		res <- list()
 		for(i in 1:nrow(x)) {
-			res[i,] <- stratify(x[i,], percentile=percentile[i])
+			res[[i]] <- stratify(x[i,,drop=TRUE], percentile=percentile, as.factor=as.factor)
 		}
-		rownames(res) <- sprintf("%s (%d%%)", rownames(res), round(percentile*100))
+		names(res) <- sprintf("%s (%d%%)", rownames(x), round(percentile*100))
 
 		res
 	}
 )
 
 #' @rdname stratify-methods
-#' @aliases stratify,matrix,missing,numeric-method
+#' @aliases stratify,matrix,missing,numeric,logical-method
 setMethod(
 	"stratify",
-	signature=signature("matrix", "missing", "numeric"),
-	function(x, percentile, threshold) {
-		# res <- apply(x, 1, quantile, probs=percentile)
-		# res
+	signature=signature("matrix", "missing", "numeric", "logical"),
+	function(x, percentile, threshold, as.factor) {
 		
 		length(threshold) %in% c(1, nrow(x)) || stop("length(threshold) != 1 || nrow(x)")
 		threshold  <- recycle(threshold , nrow(x))
 		
-		res <- x
+		res <- list()
 		for(i in 1:nrow(x)) {
-			res[i,] <- stratify(x[i,], threshold=threshold[i])
+			res[[i]] <- stratify(x[i,], threshold=threshold[i], as.factor=as.factor)
 		}
-		rownames(res) <- sprintf("%s (thresh=%d)", rownames(res), round(threshold,2))
+		names(res) <- sprintf("%s (thresh=%.2f)", rownames(x), threshold)
 
 		res
 	}
 )
 
+
 #' @rdname stratify-methods
-#' @aliases stratify,matrix,numeric,numeric-method
+#' @aliases stratify,matrix,numeric,numeric,logical-method
 setMethod(
 	"stratify",
-	signature=signature("matrix", "numeric", "numeric"),
-	function(x, percentile, threshold) {
-		stratify(x, percentile)
+	signature=signature("matrix", "numeric", "numeric", "logical"),
+	function(x, percentile, threshold, as.factor) {
+		warning("you specified both percentile and threshold. ignoring threshold")
+		stratify(x, percentile, as.factor=as.factor)
 	}
 )
 
-
+################################################################################
+# coerce different objects into matrices.
+################################################################################
 
 #' @rdname stratify-methods
-#' @aliases stratify,data.frame,numeric,missing-method
+#' @aliases stratify,data.frame,ANY,ANY,logical-method
 setMethod(
 	"stratify",
-	signature=signature("data.frame", "numeric", "missing"),
-	function(x, percentile, threshold) {
+	signature=signature("data.frame", "ANY", "ANY", "logical"),
+	function(x, percentile, threshold, as.factor) {
 		isNumeric <- colclasses(x) == "numeric"
-		mat   <- as.matrix(x[,isNumeric])
-		strat <- stratify(mat, percentile=percentile)
-		res   <- x
-		res[, isNumeric] <- strat
-		rownames(res) <- rownames(strat)
-		
-		res
-	}
-)
-
-#' @rdname stratify-methods
-#' @aliases stratify,data.frame,missing,numeric-method
-setMethod(
-	"stratify",
-	signature=signature("data.frame", "missing", "numeric"),
-	function(x, percentile, threshold) {
-		isNumeric <- colclasses(x) == "numeric"
-		mat   <- as.matrix(x[,isNumeric])
-		strat <- stratify(mat, threshold=threshold)
-		res   <- x
-		res[, isNumeric] <- strat
-		rownames(res) <- rownames(strat)
-		
-		res
-	}
-)
-
-#' @rdname stratify-methods
-#' @aliases stratify,data.frame,numeric,numeric-method
-setMethod(
-	"stratify",
-	signature=signature("data.frame", "numeric", "numeric"),
-	function(x, percentile, threshold) {
-		stratify(x,percentile=percentile)
+		mat <- as.matrix(x[,isNumeric])
+		stratify(mat, percentile, threshold, as.factor)
 	}
 )
 
 
 #' @rdname stratify-methods
-#' @aliases stratify,list,numeric,ANY-method
+#' @aliases stratify,ExpressionSet,ANY,ANY,logical-method
 setMethod(
 	"stratify",
-	signature=signature("list", "numeric", "ANY"),
-	function(x, percentile, threshold) {
+	signature=signature("ExpressionSet", "ANY", "ANY", "logical"),
+	function(x, percentile, threshold, as.factor) {
+		# stratify(exprs(x), percentile, threshold, as.factor=as.factor)
+		x <- exprs(x)
+		callNextMethod()
+	}
+)
+
+
+#' @rdname stratify-methods
+#' @aliases stratify,list,ANY,ANY,logical-method
+setMethod(
+	"stratify",
+	signature=signature("list", "ANY", "ANY", "logical"),
+	function(x, percentile, threshold, as.factor) {
+		all(sapply(x, class)=="numeric") || stop("if x is a list, it must be a list of numeric(1)'s")
 		all(sapply(x, length)==1) || stop("if x is a list, it must be a list of numeric(1)'s")
-		length(percentile) == 1 || stop("length(percentile) != 1")
-		res <- stratify(unlist(x), percentile=percentile)
+		res <- lapply(x, function(y) stratify(y, percentile, threshold, as.factor))
 		names(res) <- names(x)
 		res
 	}
 )
 
-#' @rdname stratify-methods
-#' @aliases stratify,list,missing,numeric-method
-setMethod(
-	"stratify",
-	signature=signature("list", "missing", "numeric"),
-	function(x, percentile, threshold) {
-		all(sapply(x, length)==1) || stop("if x is a list, it must be a list of numeric(1)'s")
-		length(threshold) == 1 || stop("length(threshold) != 1")
-		res <- stratify(unlist(x), threshold=threshold)
-		res <- as.list(res)
-		names(res) <- names(x)
-
-		res
-	}
-)
 
 #' @rdname stratify-methods
-#' @aliases stratify,ANY,missing,missing-method
+#' @aliases stratify,ANY,missing,missing,missing-method
 setMethod(
 	"stratify",
-	signature=signature("ANY", "missing", "missing"),
-	function(x, percentile, threshold) {
+	signature=signature("ANY", "missing", "missing", "missing"),
+	function(x, percentile, threshold, as.factor) {
 		percentile <- 0.5
-		stratify(x, percentile=percentile)
+		stratify(x, percentile=percentile, as.factor=FALSE)
 	}
 )
