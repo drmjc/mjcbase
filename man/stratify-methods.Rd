@@ -2,15 +2,15 @@
 \name{stratify}
 \alias{stratify}
 \alias{stratify,ANY,missing,missing,missing-method}
-\alias{stratify,data.frame,ANY,ANY,logical-method}
-\alias{stratify,ExpressionSet,ANY,ANY,logical-method}
-\alias{stratify,list,ANY,ANY,logical-method}
-\alias{stratify,matrix,missing,numeric,logical-method}
-\alias{stratify,matrix,numeric,missing,logical-method}
-\alias{stratify,matrix,numeric,numeric,logical-method}
-\alias{stratify,numeric,missing,numeric,logical-method}
-\alias{stratify,numeric,numeric,missing,logical-method}
-\alias{stratify,numeric,numeric,numeric,logical-method}
+\alias{stratify,data.frame,ANY,ANY,logicalORmissing-method}
+\alias{stratify,ExpressionSet,ANY,ANY,logicalORmissing-method}
+\alias{stratify,list,ANY,ANY,logicalORmissing-method}
+\alias{stratify,matrix,missing,numeric,logicalORmissing-method}
+\alias{stratify,matrix,numeric,missing,logicalORmissing-method}
+\alias{stratify,matrix,numeric,numeric,logicalORmissing-method}
+\alias{stratify,numeric,missing,numeric,logicalORmissing-method}
+\alias{stratify,numeric,numeric,missing,logicalORmissing-method}
+\alias{stratify,numeric,numeric,numeric,logicalORmissing-method}
 \title{stratify}
 \arguments{
   \item{x}{a numeric \code{vector}, \code{matrix},
