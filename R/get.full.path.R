@@ -1,7 +1,7 @@
 #' Expand a file path to an absolute path
 #' 
-#' This function has more capabilities than path.expand, in that relative
-#' paths (. and ./ and ../ and implicit ./) are also expanded, and more than normalizePath, in that
+#' This function has more capabilities than \code{path.expand}, in that relative
+#' paths (. and ./ and ../ and implicit ./) are also expanded, and more than \code{normalizePath}, in that
 #' files with an implicit ./ are also expanded relative to the current working dir,
 #' and files that don't currently exist can also expanded (see examples).
 #' 
@@ -12,6 +12,8 @@
 #' 
 #' @author Mark Cowley
 #' @export
+#' @seealso \code{\link{normalizePath}}
+#' 
 #' @examples
 #' \dontrun{
 #' path.expand("~")
@@ -38,7 +40,6 @@
 #' # [1] "sgsdf.zip"
 #' }
 get.full.path <- function(path, trailing.slash=TRUE) {
-	# .Defunct("normalizePath")
 	if( length(path) > 1 ) {
 		res <- rep("", length(path))
 		for(i in 1:length(path))
@@ -83,7 +84,7 @@ get.full.path <- function(path, trailing.slash=TRUE) {
 # 2011-04-20: code overhaul/rewrite.
 # 2011-06-21: allow >1 arguments.
 # 2011-07-06: bug fix on "^./" paths
-# 2012-10-12: resurected this from defunct status, as normalizePath fails in 2 areas: files that don't exist, and files with implicit leading ./
+# 2012-10-12: resurrected this from defunct status, as normalizePath fails in 2 areas: files that don't exist, and files with implicit leading ./
 test_get.full.path <- function(){
 	setwd("~")
 	get.full.path(".") == get.full.path("~")

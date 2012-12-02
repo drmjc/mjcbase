@@ -16,12 +16,13 @@
   directories given by \dQuote{file}
 }
 \description{
-  This function has more capabilities than path.expand, in
-  that relative paths (. and ./ and ../ and implicit ./)
-  are also expanded, and more than normalizePath, in that
-  files with an implicit ./ are also expanded relative to
-  the current working dir, and files that don't currently
-  exist can also expanded (see examples).
+  This function has more capabilities than
+  \code{path.expand}, in that relative paths (. and ./ and
+  ../ and implicit ./) are also expanded, and more than
+  \code{normalizePath}, in that files with an implicit ./
+  are also expanded relative to the current working dir,
+  and files that don't currently exist can also expanded
+  (see examples).
 }
 \examples{
 \dontrun{
@@ -51,5 +52,8 @@ normalizePath("sgsdf.zip")
 }
 \author{
   Mark Cowley
+}
+\seealso{
+  \code{\link{normalizePath}}
 }
 
