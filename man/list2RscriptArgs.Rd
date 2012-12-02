@@ -1,0 +1,29 @@
+\name{list2RscriptArgs}
+\alias{list2RscriptArgs}
+\title{convert a named list of name=value pairs into properly quoted Rscript parameters}
+\usage{
+  list2RscriptArgs(x)
+}
+\arguments{
+  \item{x}{a named list, where each element has just 1
+  value}
+}
+\value{
+  a chracter(1) which can be tacked onto the end of an
+  Rscript commandline if any values in x are characters,
+  they will be double quoted. each individual parameter
+  name=value pair will be single quoted
+}
+\description{
+  Currently we support \dQuote{character},
+  \dQuote{numeric}, \dQuote{intetger} and \dQuote{logical}
+  data types. \code{NA} are OK, but not \code{NULL}.
+}
+\examples{
+x <- list(a="C2CGP", b=1, c=TRUE, out="/mnt/ICGCPancreas")
+list2RscriptArgs(x)
+}
+\author{
+  Mark Cowley, 2011-08-18
+}
+

@@ -1,0 +1,26 @@
+\name{suppressWarnings2}
+\alias{suppressWarnings2}
+\title{Warning messages}
+\usage{
+  suppressWarnings2(expr, enable = TRUE)
+}
+\arguments{
+  \item{expr}{an expression to evaluate}
+
+  \item{enable}{logical: if \code{TRUE} then
+  suppressWarnings is enabled, if false, the \code{expr} is
+  evaluated with no warning suppression}
+}
+\value{
+  the result from evaluating \code{expr}
+}
+\description{
+  Generates a warning message that corresponds to its
+  argument(s) and (optionally) the expression or function
+  from which it was called, which can be turned off by a
+  commandline parameter
+}
+\author{
+  Mark Cowley, 2011-08-15
+}
+
