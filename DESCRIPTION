@@ -1,6 +1,6 @@
 Package: mjcbase
-Version: 1.0.7
-Date: 2012-10-22
+Version: 1.0.8
+Date: 2012-12-03
 Title: General helper functions for dealing with R objects/data types
 Author: Mark Cowley <m.cowley@garvan.org.au>
 Maintainer: Mark Cowley <m.cowley@garvan.org.au>
@@ -133,6 +133,10 @@ Collate:
     'get.full.path.R'
     'paste0.R'
     '2Dmatch.R'
+    'debug2.R'
+    'list2RScriptArgs.R'
+    'print.venn-methods.R'
+    'suppressWarnings2.R'
 Imports:
     excelIO,
     utils
