@@ -1,4 +1,5 @@
 #' Variable recycler
+#' 
 #' Recycle the elements in \code{x} to make a vector that has length \code{N}.
 #' 
 #' Typical usages are: \preformatted{ recycle(1:8, 17) recycle(c("red", "blue",

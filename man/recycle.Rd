@@ -1,7 +1,6 @@
 \name{recycle}
 \alias{recycle}
-\title{Variable recycler
-Recycle the elements in \code{x} to make a vector that has length \code{N}.}
+\title{Variable recycler}
 \usage{
   recycle(x, N)
 }
@@ -16,6 +15,10 @@ Recycle the elements in \code{x} to make a vector that has length \code{N}.}
   x as many times as necessary.
 }
 \description{
+  Recycle the elements in \code{x} to make a vector that
+  has length \code{N}.
+}
+\details{
   Typical usages are: \preformatted{ recycle(1:8, 17)
   recycle(c("red", "blue", "green"), 7) } If
   \code{length(x) == 1} then this is equivalent to
