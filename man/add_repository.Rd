@@ -1,0 +1,34 @@
+\name{add_repository}
+\alias{add_repository}
+\title{point R to an additional package repository}
+\usage{
+  add_repository(path, name)
+}
+\arguments{
+  \item{path}{the path to a repository. note this should be
+  the root level, where 'src/contrib' exists.}
+
+  \item{name}{the repository name.}
+}
+\value{
+  nothing. sets the 'repos' option.
+}
+\description{
+  point R to an additional package repository
+}
+\examples{
+# for packages that live in ~/src/contrib, specify this:
+add_repository("file:///Users/marcow", "local")
+getOption("repos")
+
+# <libdir>/src/contrib exists
+add_repository(paste0("file://", normalizePath(libdir), "/"), "local")
+getOption("repos")
+
+# real example; add the NuGO repository
+add_repository("http://nmg-r.bioinformatics.nl/Custom_CDF_DB_V16.0.0/", "NUGO")
+}
+\author{
+  Mark Cowley, 2013-05-20
+}
+
