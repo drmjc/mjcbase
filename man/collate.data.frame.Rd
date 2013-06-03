@@ -1,7 +1,6 @@
 \name{collate.data.frame}
 \alias{collate.data.frame}
-\title{Collate the columns from two data.frames. ie produce a table that alternates
-columns from the 2 tables}
+\title{Collate the columns from two data.frames}
 \usage{
   collate.data.frame(x, y)
 }
@@ -18,6 +17,11 @@ columns from the 2 tables}
 \description{
   Collate the columns from two data.frames. ie produce a
   table that alternates columns from the 2 tables
+}
+\examples{
+a <- iris[1:5,]; colnames(a) <- letters[1:5]
+b <- iris[1:5,]; colnames(b) <- LETTERS[1:5]
+collate.data.frame(a, b)
 }
 \author{
   Mark Cowley, 2009-12-16
