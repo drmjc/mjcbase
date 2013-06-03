@@ -21,6 +21,10 @@
   the list of vectors (ie row 1 contains the word that was
   found in the most number of vectors in list x)
 }
+\examples{
+mylist <- list(A=letters[1:15], B=letters[10:26], C=letters[15:20])
+list2adjmat(mylist)
+}
 \author{
   Mark Cowley, 2009-10-29
 }
