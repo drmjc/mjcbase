@@ -39,7 +39,7 @@
 #'
 #' @export
 rbind.smart <- function(x, y, sort.col=NULL) {
-    if(ncol(x) == ncol(y))
+    if(ncol(x) == ncol(y) && identical(colnames(x), colnames(y)))
         return( rbind(x, y) )
     else {
         #
@@ -90,3 +90,5 @@ rbind.smart <- function(x, y, sort.col=NULL) {
         return( res )
     }
 }
+# CHANGELOG
+# 2013-08-28: added explicit check for same colnames if ncol's are equal.
