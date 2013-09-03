@@ -4,7 +4,7 @@
 #' 
 #' @param x a \code{data.frame}
 #' @param column the column index that the newly moved rownames will have - (ie
-#'   column=1 puts the rownames into the first column). If column=NULL or
+#'   \code{column=1} puts the rownames into the first column). If \code{column=NULL} or
 #'   column > ncol(x), the rownames will be moved to the first, and last
 #'   column, respectively.
 #' @param sep the value to use to make the rownames unique (if necessary)

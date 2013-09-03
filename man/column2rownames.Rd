@@ -23,10 +23,10 @@
   \item{x}{a \code{data.frame}}
 
   \item{column}{the column index that the newly moved
-  rownames will have - (ie column=1 puts the rownames into
-  the first column). If column=NULL or column > ncol(x),
-  the rownames will be moved to the first, and last column,
-  respectively.}
+  rownames will have - (ie \code{column=1} puts the
+  rownames into the first column). If \code{column=NULL} or
+  column > ncol(x), the rownames will be moved to the
+  first, and last column, respectively.}
 
   \item{sep}{the value to use to make the rownames unique
   (if necessary)}
