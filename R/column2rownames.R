@@ -16,10 +16,12 @@
 #' @rdname column2rownames
 column2rownames <- function(x, column=1, sep=".") {
     rownames(x) <- make.unique(as.character(x[, column]), sep=sep)
-    x <- x[,-column]
+    x <- x[, -column, drop=FALSE]
 
     return( x )
 }
+# CHANGELOG
+# 2013-09-03: bug fix where a 2 column table became a vector
 
 #' @export
 #' @rdname column2rownames
