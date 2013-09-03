@@ -1,6 +1,6 @@
 Package: mjcbase
 Version: 1.0.9
-Date: 2013-06-03
+Date: 2013-09-03
 Title: General helper functions for dealing with R objects/data types
 Author: Mark Cowley <m.cowley@garvan.org.au>
 Maintainer: Mark Cowley <m.cowley@garvan.org.au>
@@ -84,7 +84,6 @@ Collate:
     'zipdir.R'
     'cbind.list.R'
     'cbind.smart.R'
-    'collate.data.frame.R'
     'dir.remove.R'
     'dir.size.R'
     'file.gzip.R'
@@ -139,6 +138,7 @@ Collate:
     'suppressWarnings2.R'
     'add_repository.R'
     'ftpdir.R'
+    'collate.R'
 Imports:
     excelIO,
     utils
