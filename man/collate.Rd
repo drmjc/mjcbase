@@ -1,0 +1,40 @@
+\name{collate}
+\alias{collate}
+\title{collate data together}
+\usage{
+  collate(x, y)
+}
+\arguments{
+  \item{x}{a vector or 2D object}
+
+  \item{y}{a vector or 2D object, identically sized to x}
+}
+\value{
+  the same data type as x, with columns or data
+  interleaved.
+}
+\description{
+  collate data, that is, interleave x1,y1,x2,y2,...,xN,yN.
+  x and y must have same dimensions
+}
+\details{
+  collate.data.frame: Collate the columns from two
+  \code{data.frame}'s. ie produce a table that alternates
+  columns from the 2 tables. They must be identical
+  dimensions.
+}
+\examples{
+# character
+collate(letters, LETTERS)
+
+collate(1:10, 11:20)
+
+# data.frame
+a <- iris[1:5,]; colnames(a) <- letters[1:5]
+b <- iris[1:5,]; colnames(b) <- LETTERS[1:5]
+collate(a, b)
+}
+\author{
+  Mark Cowley
+}
+

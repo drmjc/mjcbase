@@ -31,6 +31,11 @@ collate <- function(x,y) UseMethod("collate")
 # 2009-12-16 - original created, called collate.data.frame
 # 2013-08-09 - made this into S3 generic & added numeric, character.
 
+collate.default <- function(x,y) {
+	res <- collate(as.character(x), as.character(y))
+	res <- as(res, class(x))
+}
+
 collate.data.frame <- function(x,y) {
 	identical(dim(x), dim(y))
 	
