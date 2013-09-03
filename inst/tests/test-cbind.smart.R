@@ -1,6 +1,7 @@
 context("cbind.smart suite")
 
 test_that("cbind.smart 2way", {
+	library(stats)
 	set.seed(12345)
 	a <- data.frame(matrix(rnorm(25), 5, 5))
 	dimnames(a) <- list(letters[1:5], LETTERS[1:5])
@@ -30,6 +31,7 @@ test_that("cbind.smart 2way", {
 })
 
 test_that("cbind.smart 3way", {
+	library(stats)
 	set.seed(12345)
 	a <- data.frame(matrix(rnorm(25), 5, 5))
 	dimnames(a) <- list(letters[1:5], LETTERS[1:5])

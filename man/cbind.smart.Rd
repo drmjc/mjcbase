@@ -2,50 +2,41 @@
 \alias{cbind.smart}
 \title{A smarter cbind}
 \usage{
-  cbind.smart(x, y, sort.col = NULL)
+  cbind.smart(..., sort.col = NULL)
 }
 \arguments{
-  \item{x,y}{matrix-like objects to be merged}
+  \item{\dots}{at least two matrix-like objects to be
+  merged.}
 
   \item{sort.col}{Column to sort on. \dQuote{NULL} is ok.}
 }
 \value{
-  A data.frame with \code{ncol(x)} + \code{ncol(y)} rows,
-  and \code{length(union(rownames(x), rownames(y)))}
-  columns.
+  a \code{data.frame} with all input objects cbound
+  together, and with 1 row per unique rowname across all
+  the input matrix-like-objects, with \code{NA}'s inserted
+  where appropriate.
 }
 \description{
-  \code{cbind} 2 matrix-like-objects even if they have
-  different numbers of rows.  It's very much like merge,
-  but works nicely the same as \code{\link{rbind.smart}}.
-}
-\details{
-  The resulting data.frame will have \code{ncol(x)} +
-  \code{ncol(y)} rows, and \code{length(union(rownames(x),
-  rownames(y)))} rows.
-
-  If x and y contain the same rownames, then
-  \code{cbind.smart} == \code{\link{cbind}}.
-
-  If x and y contain partially overlapping rownames, then
-  the result will be the union of all rownames, with NA's
-  filled in where appropriate.
-
-  If x and y contain no overlapping rownames, then the
-  result will have x in top left and y in bottom right,
-  filled in with NA's. as in: \preformatted{ x : X; y: Y
-  cbind.smart(x, y) -> X NA NA Y } Naming rules: column
-  classes from \code{x} take precedence over those from
-  \code{y}, and the rownames of result will be all of the
-  rownames from x, then the rownames from y that were not
-  also in x at the end.
+  \code{cbind} only combines matrix-like objects when they
+  contain identical rownames. This function allows any
+  number of matrix-like objects to be cbound, even if they
+  contain very few (or even no) rownames in common. The
+  result will have 1 row per unique rowname across all the
+  input matrix-like-objects, and will have \code{NA}'s
+  inserted where appropriate. The first argument will be in
+  the top left of the result, followed by all columns of
+  the 2nd argument, and any new rows added to the bottom,
+  until the final obect is added in the bottom right hand
+  corner. Thus the result grows diagonally.
 }
 \examples{
 a <- data.frame(matrix(rnorm(25), 5, 5))
 dimnames(a) <- list(letters[1:5], LETTERS[1:5])
 b <- data.frame(matrix(rnorm(25), 5, 5))
-dimnames(a) <- list(letters[3:7], LETTERS[3:7])
-cbind.smart(a, b)
+dimnames(b) <- list(letters[3:7], LETTERS[3:7])
+c <- data.frame(matrix(rnorm(25), 5, 5))
+dimnames(c) <- list(letters[11:15], LETTERS[11:15])
+cbind.smart(a, b, c)
 }
 \author{
   Mark Cowley, 2010-03-10
