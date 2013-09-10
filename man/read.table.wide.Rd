@@ -218,6 +218,11 @@
   improvement using this (25.5s) vs
   \code{\link{read.table}} (484.5s).
 }
+\details{
+  Common Error: The message: \sQuote{Error in FUN(X[[1L]],
+  ...) : the first argument must be of mode character}
+  means you should set \code{stringsAsFactors=FALSE}.
+}
 \author{
   Mark Cowley, 2011-03-29
 }

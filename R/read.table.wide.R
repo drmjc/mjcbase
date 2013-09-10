@@ -8,6 +8,11 @@
 #' This function essentially mashes the results from \code{\link{scan}} into a \code{\link{data.frame}}
 #' On a 15MB file with 16x88742 elements, I got a 19x speed improvement using
 #' this (25.5s) vs \code{\link{read.table}} (484.5s).
+#' 
+#' @details Common Error:
+#' The message: \sQuote{Error in FUN(X[[1L]], ...) : the first argument must be of mode character} means
+#' you should set \code{stringsAsFactors=FALSE}.
+#' 
 #' @param file the name of the file which the data are to be read from.
 #'   Each row of the table appears as one line of the file.  If it
 #'   does not contain an \emph{absolute} path, the file name is
@@ -229,6 +234,8 @@ read.table.wide <- function(
 	
 	res
 }
+# CHANGELOG
+# - 2013-09-10: added common error and the fix to the documentation.
 
 #' @rdname read.table.wide
 #' @aliases read.delim.wide
