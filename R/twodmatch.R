@@ -1,20 +1,19 @@
-#' @name %IN%
+#' Extension of \code{\%in\%} for value matching in 1D or 2D objects
 #'
-#' @title Value matching
-#'
-#' @description \code{%IN%} is a binary operator, which
+#' @description \code{\%IN\%} is a binary operator, which
 #'     returns a logical \code{matrix} or \code{data.frame}, indicating if there
 #'  is a match or not for its left operand in its second. Note \code{base}
-#' provides \code{%in%} but this only returns a vector of logicals, even if the
+#' provides \code{\%in\%} but this only returns a vector of logicals, even if the
 #' left operand is 2D.
 #'
-#' @inheritParams match
+#' @param x vector or \sQuote{NULL}: the values to be matched.  Long vectors are supported.
+#' @param table vector or \sQuote{NULL}: the values to be matched against. Long vectors are supported.
+#'
 #' @return a data.frame of logical values
 #' @author Mark Cowley, 2012-07-27
 #' @export
-#' @rdname 2Dmatch
+#' @rdname twodmatch
 #' @seealso \code{\link{which.2D}}
-#' 
 #' @examples
 #' if (require(datasets)) {
 #' 
