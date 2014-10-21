@@ -14,14 +14,15 @@
 #' decimal mark.
 #' 
 #' @param x a \code{data.frame}, \code{matrix} or \code{vector}
+#' @param \dots arguments passed to \code{\link[base]{prettyNum}}
 #' @return A character object of same size and attributes as \code{x}, in the
 #'     current locale's encoding.
 #' @seealso \code{\link[base]{prettyNum}}
 #' @author Mark Cowley
 #' @export
-prettyNum <- function(x) {
+prettyNum <- function(x, ...) {
 	if( is.matrix.like(x) ) {
-		val <- base::prettyNum( as.vector(x) )
+		val <- base::prettyNum( as.vector(x), ... )
 		res <- matrix(val, nrow(x), ncol(x), byrow=FALSE)
 		if( is.data.frame(x) )
 			res <- as.data.frame(res)
@@ -30,6 +31,6 @@ prettyNum <- function(x) {
 		return( res )
 	}
 	else {
-		base::prettyNum(x)
+		base::prettyNum(x, ...)
 	}
 }
