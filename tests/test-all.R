@@ -1,3 +1,3 @@
 library(testthat)
 
-test_package("mjcbase")
+# test_package("mjcbase")
