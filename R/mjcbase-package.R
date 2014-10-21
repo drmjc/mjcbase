@@ -23,7 +23,7 @@
 #' 
 #' @section data utilities:
 #' \code{\link{alleq}} \code{\link{even}} \code{\link{odd}}\cr
-#' \code{\link{collate.data.frame}}, \code{\link{interleave.columns}}\cr
+#' \code{\link{collate}}, \code{\link{interleave.columns}}\cr
 #' \code{\link{rename.column}}, \code{\link{col2rownames}}, \code{\link{row2colnames}},
 #' \code{\link{colnames2row}}, \code{\link{rownames2col}} for moving columns and rows in
 #' and out of \code{data.frame}'s.
@@ -34,8 +34,8 @@
 #' \tabular{ll}{ 
 #' Package: \tab mjcbase\cr
 #' Type: \tab Package\cr
-#' Version: \tab 1.0.6\cr
-#' Date: \tab 2012-07-31\cr
+#' Version: \tab 1.1.0\cr
+#' Date: \tab 2014-10-21\cr
 #' License: \tab GPL-2\cr
 #' LazyLoad: \tab yes\cr
 #' }

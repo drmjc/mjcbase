@@ -28,7 +28,6 @@
 #' Since this code uses GNU \code{cut}, it's not aware of this & will likely shift the colnames and columns. 
 #' 
 #' @inheritParams utils::read.delim
-#' @param \dots arguments passed to \code{\link{read.table}}
 #' @param columns a character vector of column names to import; or a numeric vector 
 #'  of column indices to import; or a logical vector same length as ncol(file)
 #' @return a \code{data.frame} containing just the columns of interest, just like

@@ -11,9 +11,7 @@
 #' @author Mark Cowley, 2012-09-04
 #'
 #' @export
-#' @S3method add_columns default
-#' @S3method add_columns data.frame
-#' @S3method add_columns matrix
+#' @docType methods
 #' @rdname add_columns-methods
 #' @examples
 #' if (require(datasets)) {
@@ -42,10 +40,12 @@
 #' @seealso \code{\link{merge_tsv}}
 add_columns <- function(x, columns) UseMethod("add_columns")
 
+#' @export
 add_columns.default <- function(x, columns) {
 	stop("unsupported data type for x")
 }
 
+#' @export
 add_columns.data.frame <- function(x, columns) {
 	# is(x, "data.frame") || stop("x should be a data.frame")
 	
@@ -59,6 +59,7 @@ add_columns.data.frame <- function(x, columns) {
 	res
 }
 
+#' @export
 add_columns.matrix <- function(x, columns) {
 	cat("dispatching add_columns.matrix\n")
 	

@@ -1,18 +1,3 @@
-# Export a list of single tables into the same tab delimited file, 
-# seperated by the name of each table.
-#
-# If the tables all have the same column names, then the very first row in
-# the resulting file will be the column names, and the rest will not use colnames
-#
-# Parameters:
-#	x: a list of data.frames
-#	f: the output file name
-#	...: additional arguments to write.delim
-# 
-# Mark Cowley, 2008-10-01
-#
-
-
 #' Export a list of single tables into the same tab delimited file, seperated
 #' by the name of each table.
 #' 
@@ -25,6 +10,7 @@
 #' @param \dots additional arguments to write.delim
 #' @author Mark Cowley, 2008-10-01
 #' @export
+#' @importFrom excelIO write.delim
 write.delim.list <- function(x, f, ...) {
 	OUT <- file(f, "w")
 	# write headers just once if they're all the same.

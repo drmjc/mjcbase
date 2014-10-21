@@ -63,7 +63,7 @@ mgrep <- function( patterns, x, ignore.case = FALSE, perl = FALSE,
 #' @details \code{mgrepl}: grep for multiple \code{patterns}, and return logical if each pattern is present
 #' in any value of \code{x}
 #' 
-#' @inheritParams grepl
+#' @inheritParams mgrep
 #' @author Mark Cowley, 2011-02-18
 #' @export
 #' @rdname mgrep
@@ -85,7 +85,7 @@ mgrepl <- function( patterns, x, ignore.case = FALSE, perl = FALSE, fixed = FALS
 #' @details \code{grepf}: grep -f for R. ie return the elements of \code{x} 
 #' which match \emph{any} of the \code{patterns}.
 #' 
-#' @inheritParams grepl
+#' @inheritParams mgrep
 #' 
 #' @return \code{grepf}: if \code{value=FALSE}, a \code{numeric} vector of 
 #' indices in \code{1:length(x)} which match \emph{any} of the \code{patterns},
@@ -126,7 +126,7 @@ grepf <- function( patterns, x, ignore.case = FALSE, perl = FALSE,
 #' elements of \code{x} match \code{>=1} of the \code{patterns}, as
 #' a logical vector
 #' 
-#' @inheritParams grepl
+#' @inheritParams mgrep
 #' 
 #' @return \code{grepfl}: a \code{logical} vector, of length\code{=length(x)}, 
 #' indicating whether each of the elements in \code{x} match \emph{any} of the 

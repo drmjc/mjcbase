@@ -2,7 +2,7 @@
 #' 
 #' Calculate the density of the values in the upper or lower triangle of x.
 #' 
-#' @inheritParams stats::density
+#' @param x the data from which the estimate is to be computed.
 #' @param \dots arguments passed to density
 #' @author Mark Cowley, 4 May 2006
 #' @export

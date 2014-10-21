@@ -10,6 +10,7 @@
 #' 
 #' @param x a character vector, or a vector which can be converted to one.
 #' @param patterns a character vector of patterns. see \code{\link{grep}}.
+#' @param \dots currently ignored.
 #' 
 #' @return a character vector representation of x, with the elements reodered. 
 #'  If no elements in \code{x} match any pattern then these will be at the end.

@@ -1,4 +1,4 @@
-#' zeros ones
+#' Matlab wrappers
 #' 
 #' create a matrix of 0's or 1's, like the Matlab functions of the 
 #' same name.

@@ -4,7 +4,7 @@
 #' debuging on and off via a logical global parameter, meaning no more code
 #' commenting
 #' 
-#' @param fun: any interpreted R function. see \code{\link[base]{debug}}
+#' @param fun any interpreted R function. see \code{\link[base]{debug}}
 #' @param text a text string that can be retrieved when the browser is entered.
 #'   see \code{\link[base]{debug}}
 #' @param condition a condition that can be retrieved when the browser is entered.

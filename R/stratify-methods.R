@@ -27,11 +27,14 @@ setClassUnion("logicalORmissing", c("logical", "missing"))
 #' not be \code{NULL}, or \code{NA}, and if specified, should be within the range of (min(x), max(x)).
 #' If \code{x} is 2D, then you can specify 1 threshold for all rows, or 1 threshold per row in \code{x}.
 #' \code{percentile} overrides \code{threshold} if both are specified.
+#'
+#' @param as.factor logical: controls whether the return value should be a factor or not.
+#'
 #' @return a numeric \code{vector}, \code{matrix}, \code{data.frame} or \code{list} of 0/1 values, where 0 means below the
 #'  cutpoint, and 1 means >= the cutpoint.
 #' 
 #' @author Mark Cowley, 2011-09-01
-#' @exportMethod stratify
+#' @export
 #' @rdname stratify-methods
 #' @docType methods
 #' 
@@ -44,6 +47,7 @@ setGeneric(
 
 #' @rdname stratify-methods
 #' @aliases stratify,numeric,numeric,missing,logicalORmissing-method
+#' @export
 setMethod(
 	"stratify",
 	signature=signature("numeric", "numeric", "missing", "logicalORmissing"),
@@ -57,6 +61,7 @@ setMethod(
 
 #' @rdname stratify-methods
 #' @aliases stratify,numeric,missing,numeric,logicalORmissing-method
+#' @export
 setMethod(
 	"stratify",
 	signature=signature("numeric", "missing", "numeric", "logicalORmissing"),
@@ -74,6 +79,7 @@ setMethod(
 
 #' @rdname stratify-methods
 #' @aliases stratify,numeric,numeric,numeric,logicalORmissing-method
+#' @export
 setMethod(
 	"stratify",
 	signature=signature("numeric", "numeric", "numeric", "logicalORmissing"),
@@ -86,6 +92,7 @@ setMethod(
 
 #' @rdname stratify-methods
 #' @aliases stratify,matrix,numeric,missing,logicalORmissing-method
+#' @export
 setMethod(
 	"stratify",
 	signature=signature("matrix", "numeric", "missing", "logicalORmissing"),
@@ -109,6 +116,7 @@ setMethod(
 
 #' @rdname stratify-methods
 #' @aliases stratify,matrix,missing,numeric,logicalORmissing-method
+#' @export
 setMethod(
 	"stratify",
 	signature=signature("matrix", "missing", "numeric", "logicalORmissing"),
@@ -130,6 +138,7 @@ setMethod(
 
 #' @rdname stratify-methods
 #' @aliases stratify,matrix,numeric,numeric,logicalORmissing-method
+#' @export
 setMethod(
 	"stratify",
 	signature=signature("matrix", "numeric", "numeric", "logicalORmissing"),
@@ -145,6 +154,7 @@ setMethod(
 
 #' @rdname stratify-methods
 #' @aliases stratify,data.frame,ANY,ANY,logicalORmissing-method
+#' @export
 setMethod(
 	"stratify",
 	signature=signature("data.frame", "ANY", "ANY", "logicalORmissing"),
@@ -157,20 +167,8 @@ setMethod(
 
 
 #' @rdname stratify-methods
-#' @aliases stratify,ExpressionSet,ANY,ANY,logicalORmissing-method
-setMethod(
-	"stratify",
-	signature=signature("ExpressionSet", "ANY", "ANY", "logicalORmissing"),
-	function(x, percentile, threshold, as.factor) {
-		# stratify(exprs(x), percentile, threshold, as.factor=as.factor)
-		x <- exprs(x)
-		callNextMethod()
-	}
-)
-
-
-#' @rdname stratify-methods
 #' @aliases stratify,list,ANY,ANY,logicalORmissing-method
+#' @export
 setMethod(
 	"stratify",
 	signature=signature("list", "ANY", "ANY", "logicalORmissing"),
@@ -186,6 +184,7 @@ setMethod(
 
 #' @rdname stratify-methods
 #' @aliases stratify,ANY,missing,missing,missing-method
+#' @export
 setMethod(
 	"stratify",
 	signature=signature("ANY", "missing", "missing", "missing"),
