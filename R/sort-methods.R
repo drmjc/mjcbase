@@ -7,13 +7,14 @@
 #' @return a sorted object of same type as \code{x}
 #' 
 #' @author Mark Cowley
-#' @exportMethod sort
+#' @export
 #' @rdname sort-methods
 #' @docType methods
 setGeneric("sort", function(x, decreasing=FALSE, na.last=NA, FUN, ...) standardGeneric("sort"))
 
 #' @rdname sort-methods
 #' @aliases sort,matrix-method
+#' @export
 setMethod(
 	"sort",
 	signature=signature("matrix"),
@@ -30,6 +31,7 @@ setMethod(
 
 #' @rdname sort-methods
 #' @aliases sort,data.frame-method
+#' @export
 setMethod(
 	"sort",
 	signature=signature("data.frame"),
@@ -47,6 +49,7 @@ setMethod(
 
 #' @rdname sort-methods
 #' @aliases sort,ANY-method
+#' @export
 setMethod(
 	"sort",
 	signature=signature("ANY"),
