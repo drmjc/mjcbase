@@ -128,6 +128,7 @@ write.venn.2D.xls <- function(x, y, file, names=c("A", "B"), sortfun=sort, expor
 #' write.venn.3D.xls(LETTERS[1:10], LETTERS[7:15], LETTERS[9:20], f)
 #' @author Mark Cowley, 2009-02-02
 #' @export
+#' @importFrom excelIO write.xls
 write.venn.3D.xls <- function(x, y, z, file, names=c("A", "B", "C"), sortfun=sort, exportXYZ=FALSE) {
 	!missing(x) && !missing(y) && !missing(z) || stop("must supply the x,y,z vectors")
 	length(names) == 3 || stop("names must have length=3")
