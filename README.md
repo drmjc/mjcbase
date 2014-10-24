@@ -7,8 +7,8 @@ INSTALLATION
 ------------
 
     library(devtools)
-    install_github("excelIO", "drmjc")
-    install_github("mjcbase", "drmjc")
+    install_github("drmjc/excelIO")
+    install_github("drmjc/mjcbase")
     
 Popular Functions
 -----------------
