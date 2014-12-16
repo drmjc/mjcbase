@@ -3,7 +3,7 @@
 #' @param x an R object
 #' @return logical: \code{TRUE} if \code{x} is a \code{matrix} or \code{data.frame}; 
 #' \code{FALSE} otherwise
-#' @export
+#' @export is.matrix.like
 #' @author Mark Cowley, 2011-07-18
 #' @examples
 #' m <- matrix(1:25,5)

@@ -13,7 +13,7 @@
 #' #   A ~ B A & B B ~ A A | B
 #' # N     4     6    10    20
 #' # %    20    30    50   100
-#' @export
+#' @export print.venn
 print.venn <- function(x, y) {
     all <- intersect(x, y)
     x <- setdiff(x, all)
