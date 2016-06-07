@@ -27,7 +27,7 @@ which can be coerced by \code{as.character} to a character vector.}
 \item{ignore.case}{if \code{FALSE}, the pattern matching is \emph{case
       sensitive} and if \code{TRUE}, case is ignored during matching.}
 
-\item{perl}{logical.  Should perl-compatible regexps be used?}
+\item{perl}{logical.  Should Perl-compatible regexps be used?}
 
 \item{value}{if \code{FALSE}, a vector containing the (\code{integer})
     indices of the matches determined by \code{grep} is returned, and if

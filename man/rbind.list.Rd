@@ -11,6 +11,10 @@ rbind.list(..., sep = ".")
 
 \item{\dots}{either a single list of tables, or multiple tables to rbind, where table means
 \code{matrix} or \code{data.frame}}
+
+\item{name2colname}{Add a new column to each table before rbinding it? If not \code{NULL}
+then a new column will be added, the values correspond to `names(x)`, and the colname
+is `name2colname`.}
 }
 \value{
 a large table with all elements in the list rbind-ed
@@ -19,6 +23,14 @@ a large table with all elements in the list rbind-ed
 You can either supply many variables that are row-bindable, (ie are
 the right dimension), or one list argument containing matrices that
 can be row-binded
+}
+\details{
+rownames will be set to <list element name>.<original row name>
+
+Often when rbind-ing tables of data together, you want to tag all rows
+from each table with the sample to which they belong. You can specify
+\code{name2colname}, which will add a new column and track the origin
+of those rows.
 }
 \author{
 Mark Cowley, 5 April 2006
