@@ -26,6 +26,7 @@
 #' dimnames(c) <- list(letters[11:15], LETTERS[11:15])
 #' cbind.smart(a, b, c)
 #' @export
+#' @importFrom methods as
 cbind.smart <- function(..., sort.col=NULL) {
 	args <- list(...)
 	

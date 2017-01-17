@@ -19,6 +19,7 @@
 #' @return a \code{data.frame} of merged data
 #' @author Mark Cowley, 2012-09-04
 #' @export
+#' @importFrom utils read.delim
 #' @examples
 #' \dontrun{
 #' # import 3 files from TCGA Breast cancer data

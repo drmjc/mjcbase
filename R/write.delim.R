@@ -34,6 +34,7 @@
 #' @author Mark Cowley
 #' @seealso \code{\link{write.table}}, \code{\link{read.delim}}
 #' @keywords IO file
+#' @importFrom utils write.table
 #' @export
 #' 
 write.delim <- function(x, file, na="---",

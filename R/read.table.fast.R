@@ -37,6 +37,7 @@
 #' @rdname read.table.fast
 #' @aliases read.table.fast
 #' @export
+#' @importFrom utils read.table
 #' @docType methods
 #'
 #' @examples

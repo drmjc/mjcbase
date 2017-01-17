@@ -163,6 +163,7 @@
 #' @aliases read.table.wide
 #' @author Mark Cowley, 2011-03-29
 #' @export
+#' @importFrom utils type.convert
 #' @docType methods
 #' 
 read.table.wide <- function(

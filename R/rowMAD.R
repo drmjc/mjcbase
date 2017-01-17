@@ -4,6 +4,7 @@
 #' @return a numeric vector of MAD scores
 #' @author Mark Cowley, 2008-12-16
 #' @export
+#' @importFrom stats mad
 rowMAD <- function(x, ...) {
 	apply(x, 1, mad, ...)
 }
@@ -24,6 +25,7 @@ rowRange <- function(x) {
 #' @return a numeric vector of medians
 #' @author Mark Cowley, 2009-04-09
 #' @export
+#' @importFrom stats  median
 rowMedian <- function(x) {
 	rowapply(x, median)
 }

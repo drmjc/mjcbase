@@ -4,6 +4,7 @@
 #' @return a numeric vector like the input, but with 1's and 0's swapped.
 #' @author Mark Cowley, 2011-09-02
 #' @export
+#' @importFrom methods is
 #' @examples
 #' input <- c(0,1,0,1)
 #' binary.swap(input)

@@ -1,19 +1,32 @@
 Package: mjcbase
-Version: 1.2.0
-Date: 2016-04-14
-Title: General helper functions for dealing with R objects/data types
+Version: 1.2.1
+Date: 2017-01-17
+Title: General helper functions for dealing with \R objects/data types
+Description: Various utilities designed to extend base functionality of \R, since 2004, including:
+   - venn comparisons from 2, or 3 vectors: print.venn, write.venn
+   - data import: read.table.fast, read.table.wide, readLine
+   - data export: write.delim, write.delim.list, writeLines.list,
+   - data summaries: percentile, quartile,
+   - set operations: unionN, intersectN, unduplicate, interleave
+   - clipboard interaction: pbpaste, pbcopy
+   - converting lists, vectors and tables of n:n mappings,
+   - file system interaction: dir.remove, dir.size, file.gzip, file.issymlink, file.move, file.numlines,
+   - and many, many more.
+   Some of this functionality will have been replaced over the years by the tidyverse,
+   but still useful.
 Author: Mark Cowley <m.cowley@garvan.org.au>
 Maintainer: Mark Cowley <m.cowley@garvan.org.au>
 Depends:
-    R (>= 2.12.0)
+    R (>= 2.12.0),
+	excelIO
 Suggests:
     testthat,
     datasets
-Description: A library of generic helper functions for making life easier in R
 URL: http://garvan.org.au/research/cancer/genome-informatics/marcow
 Type: Package
 License: GPL-2
 Imports:
     utils,
-    excelIO
+	methods
 Roxygen: list(wrap = FALSE)
+RoxygenNote: 5.0.1

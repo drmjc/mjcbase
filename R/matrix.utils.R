@@ -31,6 +31,7 @@ colapply <- function(x, FUN, ...) {
 #' @return the SD of each row
 #' @author Mark Cowley
 #' @export
+#' @importFrom stats sd
 rowSD <- function(x, na.rm=TRUE) {
     rowapply(x, sd, na.rm=na.rm)
 }
@@ -41,6 +42,7 @@ rowSD <- function(x, na.rm=TRUE) {
 #' @return the variance of each row
 #' @author Mark Cowley
 #' @export
+#' @importFrom stats var
 rowVar <- function(x, na.rm=TRUE) {
     rowapply(x, var, na.rm=na.rm)
 }

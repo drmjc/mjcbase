@@ -12,6 +12,7 @@
 #' 
 #' @author Mark Cowley, 2012-03-27
 #' @export
+#' @importFrom utils installed.packages
 #' @examples
 #' pkgrep("lumi")
 #' # [1] "illuminaHumanv4.db" "lumi"               "lumidat"           

@@ -10,7 +10,6 @@
 #' @param \dots additional arguments to write.delim
 #' @author Mark Cowley, 2008-10-01
 #' @export
-#' @importFrom excelIO write.delim
 write.delim.list <- function(x, f, ...) {
 	OUT <- file(f, "w")
 	# write headers just once if they're all the same.

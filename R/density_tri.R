@@ -6,6 +6,7 @@
 #' @param \dots arguments passed to density
 #' @author Mark Cowley, 4 May 2006
 #' @export
+#' @importFrom stats density
 #' @rdname density_tri
 density_upper_tri <- function(x, ...) {
 	density( x[upper.tri(x)], ...)

@@ -9,6 +9,7 @@
 #'   failed the thresholding.
 #' @author Mark Cowley, 2009-09-03
 #' @export
+#' @importFrom stats as.dist
 threshold.distance.matrix <- function(d, max.distance) {
 	d2 <- as.matrix(d)
 	diag(d2) <- NA

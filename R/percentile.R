@@ -11,6 +11,7 @@
 #' 
 #' @author Mark Cowley, 21 June 2005
 #' @export
+#' @importFrom stats quantile
 #' @rdname percentile
 #' @examples
 #'

@@ -14,6 +14,7 @@
 #' @return a character vector of paths to the files that were unzipped.
 #' @author Mark Cowley, 2010-01-08
 #' @export
+#' @importFrom utils download.file
 #' @examples
 #' \dontrun{
 #' # f <- "http://mirror.aarnet.edu.au/pub/CRAN/bin/windows/contrib/r-release/sos_1.3-1.zip"

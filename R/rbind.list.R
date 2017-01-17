@@ -14,9 +14,6 @@
 #' @param \dots either a single list of tables, or multiple tables to rbind, where table means
 #' \code{matrix} or \code{data.frame}
 #' @param sep currently unused
-#' @param name2colname Add a new column to each table before rbinding it? If not \code{NULL}
-#'  then a new column will be added, the values correspond to `names(x)`, and the colname
-#'  is `name2colname`.
 #' @return a large table with all elements in the list rbind-ed 
 #' @author Mark Cowley, 5 April 2006
 #' @export
